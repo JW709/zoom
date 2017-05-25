@@ -645,6 +645,7 @@ class Record(Storage):
             else:
                 return value
         except KeyError as k:
+            return self.__class__.__name__
             try:
                 return self.__class__.__dict__[name].__get__(self)
             except KeyError as k:

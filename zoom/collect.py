@@ -68,14 +68,36 @@ class CollectionStore(object):
 class CollectionModel(Model):
     """CollectionModel"""
 
-    @property
-    def link(self):
-        """Return a link"""
-        return link_to(self.name, self.url)
-
+    # @property
+    # def link(self):
+    #     """Return a link"""
+    #     return 'link goes here'
+    #     # return link_to(self.name, self.url)
+    #
     def allows(self, user, action):
         """Item level policy"""
         return True
+
+    @property
+    def key(self):
+        """Return the key"""
+        return id_for(self.name)
+
+    @property
+    def url(self):
+        """Return a valid URL"""
+        return 'my_url'
+        return url_for_item(self.key)
+
+    @property
+    def link(self):
+        """Return a link"""
+        return self.name
+        return link_to(self.name, self.url)
+
+    # def allows(self, user, action):
+    #     return False
+    #
 
 
 CollectionRecord = CollectionModel
@@ -99,7 +121,7 @@ class CollectionView(View):
             """match a search by field values"""
             terms = search_text and search_text.split()
             fields.update(item)
-            v = repr(fields.display_value()).lower()
+            v = repr(fields.display_value().values()).lower()
             return terms and not any(t.lower() not in v for t in terms)
 
         c = self.collection
@@ -397,6 +419,7 @@ class Collection(object):
     url = None
     allows = shared_collection_policy('managers')
     verbose = True
+    link = property(lambda self: link_to(self.name, self.url))
 
     def __init__(self, fields, **kwargs):
 
@@ -425,7 +448,7 @@ class Collection(object):
         self.store = get('store', None)
         self.url = get('url', None)
         self.controller = get('controller', self.controller)
-        self.link = link_to(self.name, self.url)
+        # self.link = link_to(self.name, self.url)
 
         if 'policy' in kwargs:
             self.allows = get('policy')
@@ -435,17 +458,32 @@ class Collection(object):
         return item.name.lower()
 
     def calc_labels(self):
-        """Calculate labels based on fields"""
+        """Calculate column labels based on fields"""
         lookup = {f.name: f.label for f in self.fields.as_dict().values()}
         lookup.update(dict(
-            link=self.item_title,
+            link=self.fields.as_list()[0].label
         ))
         labels = [lookup.get(name, name.capitalize()) for name in self.columns]
+        logger = logging.getLogger(__name__)
+        logger.debug('labels: %r', labels)
         return labels
 
     def calc_columns(self):
         """Calculate columns based on fields"""
+        result = [f.name for f in self.fields.as_list()]
+        logger = logging.getLogger(__name__)
+        logger.debug('columns: %r', result)
+        result[0] = 'link'
+        return result
+
         return ['link'] + [f.name for f in self.fields.as_dict().values()]
+
+    def get_store(self, db):
+        return EntityStore(
+            db,
+            self.model or get_model(self.url),
+            self.item_name + '_collection',
+        )
 
     def handle(self, route, request):
         """handle a request"""
@@ -478,13 +516,7 @@ class Collection(object):
         # If we're not provided with a place to store the data
         # we assume that the collection will be stored in an
         # entity store.
-        self.store = self.store or (
-            EntityStore(
-                request.site.db,
-                self.model or get_model(self.url),
-                self.item_name + '_collection',
-            )
-        )
+        self.store = self.store or self.get_store(request.site.db)
 
         return (
             self.controller(self)(*route, **request.data) or

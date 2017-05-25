@@ -2,6 +2,8 @@
     zoom.browse
 """
 
+import logging
+
 from zoom.utils import name_for, sorted_column_names, Record
 from zoom.components import as_actions
 from zoom.html import tag, div
@@ -12,11 +14,14 @@ def browse(data, **kwargs):
 
     def getcol(item, index):
         if isinstance(item, dict):
-            return item.get(index, None)
+            logger.debug('is a dict')
+            result = item.get(index, None)
         elif isinstance(item, (tuple, list)):
-            return item[index]
+            result = item[index]
         else:
-            return getattr(item, index)
+            result = getattr(item, index)
+        logger.debug('getcol(%r, %r): %r', item, index, result)
+        return result
 
     labels = kwargs.get('labels')
     fields = kwargs.get('fields')
@@ -74,6 +79,10 @@ def browse(data, **kwargs):
     columns = list(columns)
     labels = list(labels)
 
+    logger = logging.getLogger(__name__)
+    logger.debug('columns: %r', columns)
+    logger.debug('labels: %r', labels)
+
     if fields:
         lookup = fields.as_dict()
         for n, col in enumerate(columns):
@@ -111,6 +120,7 @@ def browse(data, **kwargs):
 
     count = 0
     for row in alist:
+        logger.debug('row: %r', row)
         count += 1
         t.append('<tr id="row-%s">' % (count))
 
@@ -119,8 +129,9 @@ def browse(data, **kwargs):
                 value = str(item)
             except Exception:
                 value = repr(item)
+            logger.debug('item: %r', value)
             wrapping = len(value) < 80 and ' nowrap' or ''
-            cell_tpl = '<td {}>%s</td>'.format(wrapping)
+            cell_tpl = '<td{}>%s</td>'.format(wrapping)
             t.append(cell_tpl % value)
 
         t.append('</tr>')
