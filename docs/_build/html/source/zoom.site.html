@@ -1,0 +1,224 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>zoom.site module &#8212; zoom 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-zoom.site">
+<span id="zoom-site-module"></span><h1>zoom.site module<a class="headerlink" href="#module-zoom.site" title="Permalink to this headline">¶</a></h1>
+<p>zoom.site</p>
+<dl class="class">
+<dt id="zoom.site.ConfigSection">
+<em class="property">class </em><code class="descclassname">zoom.site.</code><code class="descname">ConfigSection</code><a class="headerlink" href="#zoom.site.ConfigSection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zoom.utils.html#zoom.utils.Record" title="zoom.utils.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.utils.Record</span></code></a></p>
+<p>site configuration section</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.site.Site">
+<em class="property">class </em><code class="descclassname">zoom.site.</code><code class="descname">Site</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.site.Site" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>a Zoom site</p>
+<dl class="attribute">
+<dt id="zoom.site.Site.abs_url">
+<code class="descname">abs_url</code><a class="headerlink" href="#zoom.site.Site.abs_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate an absolute URL for this site</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.site.Site.apps">
+<code class="descname">apps</code><a class="headerlink" href="#zoom.site.Site.apps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return list of apps installed on this site</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.site.Site.get_owner_link">
+<code class="descname">get_owner_link</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.site.Site.get_owner_link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a link for the site owner.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.site.Site.helpers">
+<code class="descname">helpers</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.site.Site.helpers" title="Permalink to this definition">¶</a></dt>
+<dd><p>provide helpers</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.site.Site.settings">
+<code class="descname">settings</code><a class="headerlink" href="#zoom.site.Site.settings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.site.Site.tracker">
+<code class="descname">tracker</code><a class="headerlink" href="#zoom.site.Site.tracker" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a Google analytics tracker code snippet</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.site.SiteConfig">
+<em class="property">class </em><code class="descclassname">zoom.site.</code><code class="descname">SiteConfig</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.site.SiteConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Site Config Reader</p>
+<p>Site configuration is managed with the site.ini files provided
+in the site directory and the default directory.</p>
+<p>The SiteConfig class maps unique config keywords used by the system
+into the section/name pairs used in the physical configuration files
+and provides default values in the event that no value is provided
+in the config files.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;site&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">)</span> <span class="c1"># without SiteConfig</span>
+<span class="go">&#39;ZOOM&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span> <span class="o">=</span> <span class="n">SiteConfig</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">config</span><span class="p">)</span> <span class="c1"># using SiteConfig</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">)</span>
+<span class="go">&#39;ZOOM&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="s1">&#39;sessions&#39;</span><span class="p">)</span>
+<span class="go">&lt;ConfigSection {&#39;secure_cookies&#39;: True}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">section</span><span class="p">(</span><span class="s1">&#39;notasection&#39;</span><span class="p">)</span>
+<span class="go">&lt;ConfigSection {}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">site</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<span class="go">&#39;ZOOM&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;notaname&#39;</span><span class="p">,</span> <span class="s1">&#39;Nope&#39;</span><span class="p">)</span>
+<span class="go">&#39;Nope&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">notaname</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">mail</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;smtp_port&#39;</span><span class="p">)</span>
+<span class="go">&#39;587&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">conf</span><span class="o">.</span><span class="n">mail</span><span class="o">.</span><span class="n">smtp_port</span>
+<span class="go">&#39;587&#39;</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="zoom.site.SiteConfig.defaults">
+<code class="descname">defaults</code><em class="property"> = {'apps': {'home': 'home', 'include_basics': True, 'index': 'content', 'login': 'login', 'path': 'apps;../../apps'}, 'error': {'users': False}, 'mail': {'from_addr': '', 'from_name': 'ZOOM Support', 'gnupg_home': None, 'logo': '', 'smtp_host': '', 'smtp_passwd': '', 'smtp_port': '587', 'smtp_user': ''}, 'monitoring': {'app_database': False, 'logging': False, 'profiling': False, 'system_database': False}, 'sessions': {'secure_cookies': True}, 'site': {'admin_email': '', 'name': 'ZOOM', 'owner_email': '', 'owner_name': 'Company Name', 'owner_url': 'https://www.dynamic-solutions.com', 'register_email': '', 'support_email': '', 'url': ''}, 'theme': {'name': 'default', 'path': None}, 'users': {'administrators_group': 'administrators', 'default': 'guest', 'developers_group': 'developers', 'override': None}}</em><a class="headerlink" href="#zoom.site.SiteConfig.defaults" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.site.SiteConfig.items">
+<code class="descname">items</code><span class="sig-paren">(</span><em>section</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.site.SiteConfig.items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.site.SiteConfig.section">
+<code class="descname">section</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.site.SiteConfig.section" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.site.handler">
+<code class="descclassname">zoom.site.</code><code class="descname">handler</code><span class="sig-paren">(</span><em>request</em>, <em>next_handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.site.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>install site object</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">zoom</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, jw.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/source/zoom.site.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
