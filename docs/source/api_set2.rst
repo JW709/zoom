@@ -8,5 +8,5 @@ API Set 2
    :maxdepth: 2
 
    api/zoom.store
-   api/zoom.redords
+   api/zoom.records
    api/zoom.buckets

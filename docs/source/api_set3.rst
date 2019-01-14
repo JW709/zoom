@@ -12,4 +12,4 @@ API Set 3
    api/zoom.forms
    api/zoom.queues
    api/zoom.mail
-   api.zoom.helpers
+   api/zoom.helpers

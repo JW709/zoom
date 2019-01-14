@@ -9,8 +9,8 @@ API Set 4
    api/zoom.mvc
    api/zoom.page
    api/zoom.audit
-   api/zoom.alert
+   api/zoom.alerts
    api/zoom.browse
-   api/zoom.app
+   api/zoom.apps
    api/zoom.collect
    api/zoom.response
