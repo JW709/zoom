@@ -1,0 +1,541 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.database module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="zoom.html module" href="zoom.html.html" />
+    <link rel="prev" title="API Test" href="../api_test.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../api_test.html">API Test</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">zoom.database module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zoom.html.html">zoom.html module</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../api_test.html">API Test</a> &raquo;</li>
+        
+      <li>zoom.database module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/api/zoom.database.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.database">
+<span id="zoom-database-module"></span><h1>zoom.database module<a class="headerlink" href="#module-zoom.database" title="Permalink to this headline">¶</a></h1>
+<p>zoom.database</p>
+<p>a database that does less</p>
+<dl class="class">
+<dt id="zoom.database.Database">
+<em class="property">class </em><code class="descclassname">zoom.database.</code><code class="descname">Database</code><span class="sig-paren">(</span><em>factory</em>, <em>*args</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>database object</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span> <span class="o">=</span> <span class="n">database</span><span class="p">(</span><span class="s1">&#39;sqlite3&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;:memory:&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="p">(</span><span class="s1">&#39;drop table if exists person&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">... </span><span class="s2">    create table if not exists person (</span>
+<span class="gp">... </span><span class="s2">    id integer primary key autoincrement,</span>
+<span class="gp">... </span><span class="s2">    name      varchar(100),</span>
+<span class="gp">... </span><span class="s2">    age       smallint,</span>
+<span class="gp">... </span><span class="s2">    kids      smallint,</span>
+<span class="gp">... </span><span class="s2">    birthdate date,</span>
+<span class="gp">... </span><span class="s2">    salary    decimal(8,2)</span>
+<span class="gp">... </span><span class="s2">    )</span>
+<span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="p">(</span><span class="s2">&quot;insert into person (name, age) values (&#39;Joe&#39;,32)&quot;</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">db</span><span class="p">(</span><span class="s1">&#39;select * from person&#39;</span><span class="p">)</span>
+<span class="go">[(1, &#39;Joe&#39;, 32, None, None, None)]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">db</span><span class="p">(</span><span class="s1">&#39;select * from person&#39;</span><span class="p">))</span>
+<span class="go">id name age kids birthdate salary</span>
+<span class="go">-- ---- --- ---- --------- ------</span>
+<span class="go"> 1 Joe   32 None None      None</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">create_person_table</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">... </span><span class="s2">    create table if not exists person (</span>
+<span class="gp">... </span><span class="s2">    id integer primary key autoincrement,</span>
+<span class="gp">... </span><span class="s2">    name      varchar(100),</span>
+<span class="gp">... </span><span class="s2">    age       smallint,</span>
+<span class="gp">... </span><span class="s2">    kids      smallint,</span>
+<span class="gp">... </span><span class="s2">    birthdate date,</span>
+<span class="gp">... </span><span class="s2">    salary    decimal(8,2)</span>
+<span class="gp">... </span><span class="s2">    )</span>
+<span class="gp">... </span><span class="s2">&quot;&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">insert_person</span> <span class="o">=</span> <span class="s2">&quot;insert into person (name, age) values (</span><span class="si">%s</span><span class="s2">, </span><span class="si">%s</span><span class="s2">)&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">database</span><span class="p">(</span><span class="s1">&#39;sqlite3&#39;</span><span class="p">,</span> <span class="n">database</span><span class="o">=</span><span class="s1">&#39;:memory:&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">db</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">db</span><span class="p">(</span><span class="n">create_person_table</span><span class="p">)</span>
+<span class="gp">... </span>   <span class="n">db</span><span class="p">(</span><span class="n">insert_person</span><span class="p">,</span> <span class="s1">&#39;Joe&#39;</span><span class="p">,</span> <span class="mi">32</span><span class="p">)</span>
+<span class="gp">... </span>   <span class="n">db</span><span class="p">(</span><span class="s1">&#39;select * from person&#39;</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="go">[(1, &#39;Joe&#39;, 32, None, None, None)]</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="zoom.database.Database.database">
+<code class="descname">database</code><a class="headerlink" href="#zoom.database.Database.database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an object containing database parameters</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.database.Database.debug">
+<code class="descname">debug</code><em class="property"> = False</em><a class="headerlink" href="#zoom.database.Database.debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Database.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>command</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>execute a SQL command with optional parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Database.execute_many">
+<code class="descname">execute_many</code><span class="sig-paren">(</span><em>command</em>, <em>sequence</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database.execute_many" title="Permalink to this definition">¶</a></dt>
+<dd><p>execute a SQL command with a sequence of parameters</p>
+</dd></dl>
+
+<dl class="classmethod">
+<dt id="zoom.database.Database.get_stats">
+<em class="property">classmethod </em><code class="descname">get_stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database.get_stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the stats to the caller, clearing the list of what is returned</p>
+<p>We use a classmethod to support inheritance (over staticmethod)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Database.get_tables">
+<code class="descname">get_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database.get_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>get a list of database tables</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.database.Database.paramstyle">
+<code class="descname">paramstyle</code><em class="property"> = 'pyformat'</em><a class="headerlink" href="#zoom.database.Database.paramstyle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Database.report">
+<code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database.report" title="Permalink to this definition">¶</a></dt>
+<dd><p>produce a SQL log report</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.database.Database.stats">
+<code class="descname">stats</code><em class="property"> = []</em><a class="headerlink" href="#zoom.database.Database.stats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Database.translate">
+<code class="descname">translate</code><span class="sig-paren">(</span><em>command</em>, <em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database.translate" title="Permalink to this definition">¶</a></dt>
+<dd><p>translate sql dialects</p>
+<p>The Python db API standard does not attempt to unify parameter passing
+styles for SQL arguments.  This translate routine attempts to do that
+for each database type.  For databases that use the preferred pyformat
+paramstyle nothing needs to be done.  Databases requiring other
+paramstyles should override this method to translate the command
+to the required style.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Database.use">
+<code class="descname">use</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Database.use" title="Permalink to this definition">¶</a></dt>
+<dd><p>use another database on the same instance</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="exception">
+<dt id="zoom.database.DatabaseException">
+<em class="property">exception </em><code class="descclassname">zoom.database.</code><code class="descname">DatabaseException</code><a class="headerlink" href="#zoom.database.DatabaseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>exception raised when a database server error occurs</p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="zoom.database.EmptyDatabaseException">
+<em class="property">exception </em><code class="descclassname">zoom.database.</code><code class="descname">EmptyDatabaseException</code><a class="headerlink" href="#zoom.database.EmptyDatabaseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>exception raised when a database is empty</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.database.MySQLDatabase">
+<em class="property">class </em><code class="descclassname">zoom.database.</code><code class="descname">MySQLDatabase</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zoom.database.Database" title="zoom.database.Database"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.database.Database</span></code></a></p>
+<p>MySQL Database</p>
+<dl class="attribute">
+<dt id="zoom.database.MySQLDatabase.connect_string">
+<code class="descname">connect_string</code><a class="headerlink" href="#zoom.database.MySQLDatabase.connect_string" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a string representation of the connection parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.MySQLDatabase.create_site_tables">
+<code class="descname">create_site_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase.create_site_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>create the tables for a site in a mysql server</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.MySQLDatabase.create_test_tables">
+<code class="descname">create_test_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase.create_test_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>create the extra test tables</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.MySQLDatabase.delete_test_tables">
+<code class="descname">delete_test_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase.delete_test_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop the extra test tables</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.MySQLDatabase.get_column_names">
+<code class="descname">get_column_names</code><span class="sig-paren">(</span><em>table</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase.get_column_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>return column names for a table</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.MySQLDatabase.get_databases">
+<code class="descname">get_databases</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase.get_databases" title="Permalink to this definition">¶</a></dt>
+<dd><p>return database names</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.MySQLDatabase.get_tables">
+<code class="descname">get_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase.get_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>return table names</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.database.MySQLDatabase.paramstyle">
+<code class="descname">paramstyle</code><em class="property"> = 'pyformat'</em><a class="headerlink" href="#zoom.database.MySQLDatabase.paramstyle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.MySQLDatabase.transaction">
+<code class="descname">transaction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabase.transaction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.database.MySQLDatabaseTransaction">
+<em class="property">class </em><code class="descclassname">zoom.database.</code><code class="descname">MySQLDatabaseTransaction</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLDatabaseTransaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zoom.database.Database" title="zoom.database.Database"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.database.Database</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.database.MySQLdbDatabase">
+<em class="property">class </em><code class="descclassname">zoom.database.</code><code class="descname">MySQLdbDatabase</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.MySQLdbDatabase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zoom.database.Database" title="zoom.database.Database"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.database.Database</span></code></a></p>
+<p>MySQLdb Database</p>
+<p>deprecated - not avaialble for Python 3.6</p>
+<p>use MySQLDatabase instead</p>
+<dl class="attribute">
+<dt id="zoom.database.MySQLdbDatabase.paramstyle">
+<code class="descname">paramstyle</code><em class="property"> = 'pyformat'</em><a class="headerlink" href="#zoom.database.MySQLdbDatabase.paramstyle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.database.Result">
+<em class="property">class </em><code class="descclassname">zoom.database.</code><code class="descname">Result</code><span class="sig-paren">(</span><em>cursor</em>, <em>array_size=1000</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Result" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>database query result</p>
+<dl class="method">
+<dt id="zoom.database.Result.first">
+<code class="descname">first</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Result.first" title="Permalink to this definition">¶</a></dt>
+<dd><p>return first item in result</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.database.Sqlite3Database">
+<em class="property">class </em><code class="descclassname">zoom.database.</code><code class="descname">Sqlite3Database</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Sqlite3Database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zoom.database.Database" title="zoom.database.Database"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.database.Database</span></code></a></p>
+<p>Sqlite3 Database</p>
+<dl class="method">
+<dt id="zoom.database.Sqlite3Database.create_site_tables">
+<code class="descname">create_site_tables</code><span class="sig-paren">(</span><em>filename=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Sqlite3Database.create_site_tables" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Sqlite3Database.create_test_tables">
+<code class="descname">create_test_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Sqlite3Database.create_test_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>create the extra test tables</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Sqlite3Database.delete_test_tables">
+<code class="descname">delete_test_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Sqlite3Database.delete_test_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>drop the extra test tables</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Sqlite3Database.get_tables">
+<code class="descname">get_tables</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Sqlite3Database.get_tables" title="Permalink to this definition">¶</a></dt>
+<dd><p>return table names</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.database.Sqlite3Database.paramstyle">
+<code class="descname">paramstyle</code><em class="property"> = 'qmark'</em><a class="headerlink" href="#zoom.database.Sqlite3Database.paramstyle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.database.Sqlite3Database.transaction">
+<code class="descname">transaction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Sqlite3Database.transaction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.database.Sqlite3DatabaseTransaction">
+<em class="property">class </em><code class="descclassname">zoom.database.</code><code class="descname">Sqlite3DatabaseTransaction</code><span class="sig-paren">(</span><em>db</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.Sqlite3DatabaseTransaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#zoom.database.Database" title="zoom.database.Database"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.database.Database</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="zoom.database.UnknownDatabaseException">
+<em class="property">exception </em><code class="descclassname">zoom.database.</code><code class="descname">UnknownDatabaseException</code><a class="headerlink" href="#zoom.database.UnknownDatabaseException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>exception raised when the database is unknown</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.database.connect_database">
+<code class="descclassname">zoom.database.</code><code class="descname">connect_database</code><span class="sig-paren">(</span><em>config</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.connect_database" title="Permalink to this definition">¶</a></dt>
+<dd><p>establish a database connection</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.database.database">
+<code class="descclassname">zoom.database.</code><code class="descname">database</code><span class="sig-paren">(</span><em>engine</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.database" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a database object</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.database.handler">
+<code class="descclassname">zoom.database.</code><code class="descname">handler</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect a database to the site if specified</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.database.obfuscate">
+<code class="descclassname">zoom.database.</code><code class="descname">obfuscate</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.obfuscate" title="Permalink to this definition">¶</a></dt>
+<dd><p>obfuscate text so it is recognizable without divulging it</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obfuscate</span><span class="p">(</span><span class="s1">&#39;12345&#39;</span><span class="p">)</span>
+<span class="go">&#39;1***5&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obfuscate</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.database.setup_test">
+<code class="descclassname">zoom.database.</code><code class="descname">setup_test</code><span class="sig-paren">(</span><em>engine=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.database.setup_test" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a set of test tables</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="zoom.html.html" class="btn btn-neutral float-right" title="zoom.html module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../api_test.html" class="btn btn-neutral" title="API Test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

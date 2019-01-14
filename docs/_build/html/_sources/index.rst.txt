@@ -7,15 +7,8 @@ Zoom Documentation
 * :ref:`modindex`
 
 .. toctree::
-   :caption: Test
+   :caption: Contents:
    :maxdepth: 2
 
-   zoom.database
-   zoom.html
+   api_test
 
-.. toctree::
-   :caption: Set 1
-   :maxdepth: 2
-
-   zoom.tools
-   zoom.utils
