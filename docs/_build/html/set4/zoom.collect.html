@@ -1,0 +1,649 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.collect module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/introduction.html">Zoom API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.collect module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/set4/zoom.collect.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.collect">
+<span id="zoom-collect-module"></span><h1>zoom.collect module<a class="headerlink" href="#module-zoom.collect" title="Permalink to this headline">¶</a></h1>
+<p>zoom.collect</p>
+<dl class="class">
+<dt id="zoom.collect.BasicSearch">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">BasicSearch</code><span class="sig-paren">(</span><em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.BasicSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.collect.RawSearch" title="zoom.collect.RawSearch"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.collect.RawSearch</span></code></a></p>
+<p>Provides basic unindexed field aware search capability</p>
+<dl class="method">
+<dt id="zoom.collect.BasicSearch.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.BasicSearch.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return records that match search text</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.Collection">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">Collection</code><span class="sig-paren">(</span><em>fields</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A collection of Records</p>
+<dl class="method">
+<dt id="zoom.collect.Collection.allows">
+<code class="descname">allows</code><span class="sig-paren">(</span><em>user</em>, <em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.allows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Policy rules for shared collection</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.controller">
+<code class="descname">controller</code><a class="headerlink" href="#zoom.collect.Collection.controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../zoom.html#zoom.collect.CollectionController" title="zoom.collect.CollectionController"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollectionController</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.fields">
+<code class="descname">fields</code><a class="headerlink" href="#zoom.collect.Collection.fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>a fields callable may have data intensive operations, delay execution until it is needed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.get_columns">
+<code class="descname">get_columns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.get_columns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the collection columns.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.get_labels">
+<code class="descname">get_labels</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.get_labels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the collection labels.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.handle">
+<code class="descname">handle</code><span class="sig-paren">(</span><em>route</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>handle a request</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.has_many_records">
+<code class="descname">has_many_records</code><a class="headerlink" href="#zoom.collect.Collection.has_many_records" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.locate">
+<code class="descname">locate</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.locate" title="Permalink to this definition">¶</a></dt>
+<dd><p>locate a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.order">
+<code class="descname">order</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.order" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sort key</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.process">
+<code class="descname">process</code><span class="sig-paren">(</span><em>*args</em>, <em>**data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process method parameters</p>
+<p>This style of calling collections is useful when you want to
+make your collection available as an attribute of a Dispatcher.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Seach the collection for records matching text</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.Collection.set_fields">
+<code class="descname">set_fields</code><span class="sig-paren">(</span><em>fields</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.Collection.set_fields" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the fields to a new value</p>
+<p>This can be used for switching fields on the fly, for example
+when your collection contains entities that are similar enough
+to be included in the same collection, but that require their
+own fields.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.sorter">
+<code class="descname">sorter</code><em class="property"> = None</em><a class="headerlink" href="#zoom.collect.Collection.sorter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.store">
+<code class="descname">store</code><em class="property"> = None</em><a class="headerlink" href="#zoom.collect.Collection.store" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.store_type">
+<code class="descname">store_type</code><a class="headerlink" href="#zoom.collect.Collection.store_type" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../zoom.html#zoom.store.EntityStore" title="zoom.store.EntityStore"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.store.EntityStore</span></code></a></p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.url">
+<code class="descname">url</code><em class="property"> = None</em><a class="headerlink" href="#zoom.collect.Collection.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.verbose">
+<code class="descname">verbose</code><em class="property"> = True</em><a class="headerlink" href="#zoom.collect.Collection.verbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.Collection.view">
+<code class="descname">view</code><a class="headerlink" href="#zoom.collect.Collection.view" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../zoom.html#zoom.collect.CollectionView" title="zoom.collect.CollectionView"><code class="xref py py-class docutils literal notranslate"><span class="pre">CollectionView</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.CollectionController">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">CollectionController</code><span class="sig-paren">(</span><em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.mvc.Controller" title="zoom.mvc.Controller"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.mvc.Controller</span></code></a></p>
+<p>Perform operations on a Collection</p>
+<dl class="method">
+<dt id="zoom.collect.CollectionController.add_image">
+<code class="descname">add_image</code><span class="sig-paren">(</span><em>*_</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.add_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>accept uploaded images and attach them to the record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.after_delete">
+<code class="descname">after_delete</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.after_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Things to do after deleting a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.after_insert">
+<code class="descname">after_insert</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.after_insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Things to do after inserting a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.after_update">
+<code class="descname">after_update</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.after_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Things to do after updating a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.before_delete">
+<code class="descname">before_delete</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.before_delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Things to do before deleting a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.before_insert">
+<code class="descname">before_insert</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.before_insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Things to do before inserting a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.before_update">
+<code class="descname">before_update</code><span class="sig-paren">(</span><em>record</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.before_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Things to do before updating a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.create_button">
+<code class="descname">create_button</code><span class="sig-paren">(</span><em>*args</em>, <em>**data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.create_button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>key</em>, <em>confirm='yes'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.delete_image">
+<code class="descname">delete_image</code><span class="sig-paren">(</span><em>key</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.delete_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete an image field</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.reindex">
+<code class="descname">reindex</code><span class="sig-paren">(</span><em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.reindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>checks authorization and calls function if authorized</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.remove_image">
+<code class="descname">remove_image</code><span class="sig-paren">(</span><em>*_</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.remove_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove a dropzone image</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionController.save_button">
+<code class="descname">save_button</code><span class="sig-paren">(</span><em>key</em>, <em>*a</em>, <em>**data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionController.save_button" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save a record</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.CollectionModel">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">CollectionModel</code><a class="headerlink" href="#zoom.collect.CollectionModel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.models.Model" title="zoom.models.Model"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.models.Model</span></code></a></p>
+<dl class="method">
+<dt id="zoom.collect.CollectionModel.allows">
+<code class="descname">allows</code><span class="sig-paren">(</span><em>user</em>, <em>action</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionModel.allows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Item level policy</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.CollectionModel.link">
+<code class="descname">link</code><a class="headerlink" href="#zoom.collect.CollectionModel.link" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a link</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.CollectionModel.url">
+<code class="descname">url</code><a class="headerlink" href="#zoom.collect.CollectionModel.url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a valid URL</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.CollectionRecord">
+<code class="descclassname">zoom.collect.</code><code class="descname">CollectionRecord</code><a class="headerlink" href="#zoom.collect.CollectionRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../zoom.html#zoom.collect.CollectionModel" title="zoom.collect.CollectionModel"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.collect.CollectionModel</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.CollectionStore">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">CollectionStore</code><span class="sig-paren">(</span><em>store</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionStore" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Decorate a Store</p>
+<p>Provide additional features to a Store class
+to make it work with collections.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.CollectionView">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">CollectionView</code><span class="sig-paren">(</span><em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.mvc.View" title="zoom.mvc.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.mvc.View</span></code></a></p>
+<p>View a collection</p>
+<dl class="method">
+<dt id="zoom.collect.CollectionView.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear the search</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>key</em>, <em>confirm='yes'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a delete form for a collection record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.edit">
+<code class="descname">edit</code><span class="sig-paren">(</span><em>key</em>, <em>**data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.edit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display an edit form for a record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.get_image">
+<code class="descname">get_image</code><span class="sig-paren">(</span><em>*a</em>, <em>**k</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.get_image" title="Permalink to this definition">¶</a></dt>
+<dd><p>return one of the images from an ImagesField value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.image">
+<code class="descname">image</code><span class="sig-paren">(</span><em>key</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respond with image field contents</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.index">
+<code class="descname">index</code><span class="sig-paren">(</span><em>q=''</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>collection landing page</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.list_images">
+<code class="descname">list_images</code><span class="sig-paren">(</span><em>key=None</em>, <em>value=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.list_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>return list of images for an ImagesField value for this record</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.new">
+<code class="descname">new</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.new" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a New Item form</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.CollectionView.show">
+<code class="descname">show</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.CollectionView.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show a record</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.IndexedCollectionSearch">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">IndexedCollectionSearch</code><span class="sig-paren">(</span><em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Provides token index for fast lookups</p>
+<p>We only provide enough room for tokens up to length 20 only because
+we have to draw the line somewhere.  This may result in some records
+not being found if the search would have mached on characters beyond
+the position 20.</p>
+<dl class="method">
+<dt id="zoom.collect.IndexedCollectionSearch.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>key</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add record values to index</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.IndexedCollectionSearch.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete indexed record values</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.collect.IndexedCollectionSearch.max_token_len">
+<code class="descname">max_token_len</code><em class="property"> = 20</em><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch.max_token_len" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.IndexedCollectionSearch.reindex">
+<code class="descname">reindex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch.reindex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rebuild the collection index</p>
+<p>This method indexes a few records at a time, in batches.  It
+can be very slow so should be done only by admins or as part
+of a maintenance cycle in the background.   Once the table is
+indexed this routine should not be needed.  It’s mainly provided
+to index an already existing table or to replace a damaged
+index.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.IndexedCollectionSearch.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return records that match search text</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.IndexedCollectionSearch.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>key</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update indexed record values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.IndexedCollectionSearch.zap">
+<code class="descname">zap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.IndexedCollectionSearch.zap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete values for all records</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.RawSearch">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">RawSearch</code><span class="sig-paren">(</span><em>collection</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.RawSearch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Raw Data Search</p>
+<dl class="method">
+<dt id="zoom.collect.RawSearch.add">
+<code class="descname">add</code><span class="sig-paren">(</span><em>key</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.RawSearch.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add record values to index</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.RawSearch.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.RawSearch.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete indexed record values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.RawSearch.reindex">
+<code class="descname">reindex</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.RawSearch.reindex" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.RawSearch.search">
+<code class="descname">search</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.RawSearch.search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return records that match raw search text</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.collect.RawSearch.update">
+<code class="descname">update</code><span class="sig-paren">(</span><em>key</em>, <em>values</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.RawSearch.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update indexed record values</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.collect.SilentCollection">
+<em class="property">class </em><code class="descclassname">zoom.collect.</code><code class="descname">SilentCollection</code><span class="sig-paren">(</span><em>fields</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.SilentCollection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.collect.Collection" title="zoom.collect.Collection"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.collect.Collection</span></code></a></p>
+<p>A collection of Records where we do not audit “View” events</p>
+<dl class="attribute">
+<dt id="zoom.collect.SilentCollection.verbose">
+<code class="descname">verbose</code><em class="property"> = False</em><a class="headerlink" href="#zoom.collect.SilentCollection.verbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.collect.as_tokens">
+<code class="descclassname">zoom.collect.</code><code class="descname">as_tokens</code><span class="sig-paren">(</span><em>values</em>, <em>max_len=20</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.as_tokens" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return values as a set of tokens</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">as_tokens</span><span class="p">([</span><span class="s1">&#39;this is a test&#39;</span><span class="p">,</span> <span class="s1">&#39;other&#39;</span><span class="p">,</span> <span class="s1">&#39;tokentoolongtobecapturedasis&#39;</span><span class="p">])))</span>
+<span class="go">[&#39;a&#39;, &#39;is&#39;, &#39;other&#39;, &#39;test&#39;, &#39;this&#39;, &#39;tokentoolongtobecapt&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.collect.image_response">
+<code class="descclassname">zoom.collect.</code><code class="descname">image_response</code><span class="sig-paren">(</span><em>name</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.image_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>provide an image response based on the file extension</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.collect.locate">
+<code class="descclassname">zoom.collect.</code><code class="descname">locate</code><span class="sig-paren">(</span><em>collection</em>, <em>key</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.locate" title="Permalink to this definition">¶</a></dt>
+<dd><p>locate a record</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.collect.shared_collection_policy">
+<code class="descclassname">zoom.collect.</code><code class="descname">shared_collection_policy</code><span class="sig-paren">(</span><em>group</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.collect.shared_collection_policy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Authourization policy for a shared collection</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

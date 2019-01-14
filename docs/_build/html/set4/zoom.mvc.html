@@ -1,0 +1,396 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.mvc module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/introduction.html">Zoom API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.mvc module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/set4/zoom.mvc.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.mvc">
+<span id="zoom-mvc-module"></span><h1>zoom.mvc module<a class="headerlink" href="#module-zoom.mvc" title="Permalink to this headline">¶</a></h1>
+<p>zoom.mvc</p>
+<p>classes to support the model, view, controller pattern</p>
+<dl class="class">
+<dt id="zoom.mvc.Controller">
+<em class="property">class </em><code class="descclassname">zoom.mvc.</code><code class="descname">Controller</code><span class="sig-paren">(</span><em>model=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.Controller" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.mvc.Dispatcher" title="zoom.mvc.Dispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.mvc.Dispatcher</span></code></a></p>
+<p>Controls a Model</p>
+<p>Use this class when an action is going to change the state
+of the model.</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.mvc.Dispatcher">
+<em class="property">class </em><code class="descclassname">zoom.mvc.</code><code class="descname">Dispatcher</code><span class="sig-paren">(</span><em>model=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.Dispatcher" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>dispatches actions to a method</p>
+<p>Accepts incoming user input actions and calls the appropriate method to
+handle the request.  Unlike the Controller and the View, the Dispatcher
+doesn’t alter the incoming input in any way, but rather passes it along
+verbatim to the method handling the request.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyDispatcher</span><span class="p">(</span><span class="n">Dispatcher</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dispatcher</span> <span class="o">=</span> <span class="n">MyDispatcher</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dispatcher</span><span class="p">(</span><span class="s1">&#39;add&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="zoom.mvc.Dispatcher.home">
+<code class="descname">home</code><em class="property"> = None</em><a class="headerlink" href="#zoom.mvc.Dispatcher.home" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.mvc.DynamicView">
+<em class="property">class </em><code class="descclassname">zoom.mvc.</code><code class="descname">DynamicView</code><span class="sig-paren">(</span><em>model=None</em>, <em>**k</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.DynamicView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.mvc.View" title="zoom.mvc.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.mvc.View</span></code></a></p>
+<p>Dynamic View - experimental (may change)</p>
+<p>A decorator class that provides views of objects dynamically loading
+its own templates in the process.</p>
+<p>Within templates the object being decorated is referred to as self.  Any
+attribtues or properties can be simply accessed using self.&lt;name&gt; for
+whatever the name is.  Templates are rendered using python format()
+function so object structures can be taversed in the usual way within
+templates.</p>
+<p>The object optionally passed as the first parameter upon construction
+is referred to as self.model.  Additional objects can be added as
+keyword parameters, which can then also be referenced with self.&lt;name&gt;.</p>
+<dl class="attribute">
+<dt id="zoom.mvc.DynamicView.asset_types">
+<code class="descname">asset_types</code><em class="property"> = ['html', 'css', 'js']</em><a class="headerlink" href="#zoom.mvc.DynamicView.asset_types" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.mvc.DynamicView.fill_js">
+<code class="descname">fill_js</code><span class="sig-paren">(</span><em>script</em>, <em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.DynamicView.fill_js" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill js tags</p>
+<p>DynamicView object attributes and properties can
+be accessed from their accompanying .js content
+via a {self.&lt;name&gt;} reference.</p>
+<p>This method is responsible for filling in these
+tags and can be overridden by subclasses of
+DynamicView if a different behaviour is desired.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.mvc.DynamicView.get_assets">
+<code class="descname">get_assets</code><span class="sig-paren">(</span><em>name=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.DynamicView.get_assets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get view assets</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.mvc.DynamicView.index">
+<code class="descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.DynamicView.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the default rendered view</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.mvc.DynamicView.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.DynamicView.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>Render the view</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.mvc.View">
+<em class="property">class </em><code class="descclassname">zoom.mvc.</code><code class="descname">View</code><span class="sig-paren">(</span><em>model=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.View" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.mvc.Dispatcher" title="zoom.mvc.Dispatcher"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.mvc.Dispatcher</span></code></a></p>
+<p>Views a model</p>
+<p>Use to view a model without altering it.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="s1">&#39;index page&#39;</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="s1">&#39;showing </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">item</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">throw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;thrown&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span> <span class="o">=</span> <span class="n">MyView</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span><span class="p">()</span>
+<span class="go">&#39;index page&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">)</span>
+<span class="go">&#39;showing 100&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">view</span><span class="p">(</span><span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">d</span><span class="o">=</span><span class="s1">&#39;extra&#39;</span><span class="p">))</span>
+<span class="go">&#39;showing 100&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">thrown</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">view</span><span class="p">(</span><span class="s1">&#39;throw&#39;</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">thrown</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">thrown</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="zoom.mvc.View.show">
+<code class="descname">show</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.View.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>View a specific item (stub)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.mvc.as_attr">
+<code class="descclassname">zoom.mvc.</code><code class="descname">as_attr</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.as_attr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replace hyphens with underscores</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">as_attr</span><span class="p">(</span><span class="s1">&#39;this-page&#39;</span><span class="p">)</span>
+<span class="go">&#39;this_page&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.mvc.dispatch">
+<code class="descclassname">zoom.mvc.</code><code class="descname">dispatch</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.dispatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create and call dispatchers in order</p>
+<p>Returns a function that will handle a request by trying each argument
+in succession.  If the argument is a Dispatcher it will be created before
+being called.  If it is a callable, it will be called as-is.  As soon
+as one of them returns a response we exit.  If none of the returns a
+response we return None, which generally results in a 404.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">MyView</span><span class="p">(</span><span class="n">View</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="s1">&#39;home page&#39;</span>
+<span class="gp">... </span>    <span class="k">def</span> <span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="s1">&#39;showing </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">key</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">main</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">MyView</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">main</span><span class="p">((),</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{}))</span>
+<span class="go">&#39;home page&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">main</span><span class="p">((</span><span class="s1">&#39;100&#39;</span><span class="p">,),</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">{}))</span>
+<span class="go">&#39;showing 100&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.mvc.evaluate">
+<code class="descclassname">zoom.mvc.</code><code class="descname">evaluate</code><span class="sig-paren">(</span><em>obj</em>, <em>name</em>, <em>route</em>, <em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.evaluate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the value of an attribute</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">thing</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Thing&#39;</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="s1">&#39;showing </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">route</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;app&#39;</span><span class="p">,),</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="go">&#39;Thing&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">evaluate</span><span class="p">(</span><span class="n">thing</span><span class="p">,</span> <span class="s1">&#39;show&#39;</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="go">&#39;showing one&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.mvc.remove_buttons">
+<code class="descclassname">zoom.mvc.</code><code class="descname">remove_buttons</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.mvc.remove_buttons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove buttons from input data</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;Pat&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">save_button</span><span class="o">=</span><span class="s1">&#39;Save&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">pp</span><span class="p">(</span><span class="n">remove_buttons</span><span class="p">(</span><span class="n">data</span><span class="p">))</span>
+<span class="go">[</span>
+<span class="go">  {</span>
+<span class="go">    &quot;save_button&quot;: &quot;Save&quot;</span>
+<span class="go">  },</span>
+<span class="go">  {</span>
+<span class="go">    &quot;age&quot;: 20,</span>
+<span class="go">    &quot;name&quot;: &quot;Pat&quot;</span>
+<span class="go">  }</span>
+<span class="go">]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

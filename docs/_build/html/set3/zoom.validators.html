@@ -1,0 +1,656 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.validators module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/introduction.html">Zoom API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.validators module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/set3/zoom.validators.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.validators">
+<span id="zoom-validators-module"></span><h1>zoom.validators module<a class="headerlink" href="#module-zoom.validators" title="Permalink to this headline">¶</a></h1>
+<p>zoom.validators</p>
+<dl class="class">
+<dt id="zoom.validators.Cleaner">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">Cleaner</code><span class="sig-paren">(</span><em>transformer</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.Cleaner" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A content cleaner.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Cleaner</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">lower</span><span class="p">)</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="s1">&#39;Test&#39;</span><span class="p">)</span>
+<span class="go">&#39;test&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">decimal</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Cleaner</span><span class="p">(</span><span class="n">decimal</span><span class="o">.</span><span class="n">Decimal</span><span class="p">)</span><span class="o">.</span><span class="n">clean</span><span class="p">(</span><span class="s1">&#39;10&#39;</span><span class="p">)</span>
+<span class="go">Decimal(&#39;10&#39;)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="zoom.validators.Cleaner.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.Cleaner.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>cleans up a value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.validators.Cleaner.valid">
+<code class="descname">valid</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.Cleaner.valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>tests validity of a value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.DateValidator">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">DateValidator</code><span class="sig-paren">(</span><em>date_format='%b %d</em>, <em>%Y'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.DateValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<p>Date validator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">DateValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;asdf&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">msg</span>
+<span class="go">&#39;enter valid date in &quot;Jan 31, 2016&quot; format&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;Jan 1, 2016&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;Jan 41, 2016&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;2016-01-14&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;2016-01-41&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.MaximumValue">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">MaximumValue</code><span class="sig-paren">(</span><em>max_value</em>, <em>empty_allowed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.MaximumValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<p>Maximum value validator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MaximumValue</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">date</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MaximumValue</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="n">date</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">msg</span>
+<span class="go">&#39;value must be at most 2015-01-01&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.MinimumLength">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">MinimumLength</code><span class="sig-paren">(</span><em>min_length</em>, <em>empty_allowed=False</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.MinimumLength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<p>A minimum length validator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MinimumLength</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">msg</span>
+<span class="go">&#39;minimum length 2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;te&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MinimumLength</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;  &#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;te&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.MinimumValue">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">MinimumValue</code><span class="sig-paren">(</span><em>min_value</em>, <em>empty_allowed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.MinimumValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<p>Minimum value validator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MinimumValue</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.PostalCodeValidator">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">PostalCodeValidator</code><a class="headerlink" href="#zoom.validators.PostalCodeValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.RegexValidator" title="zoom.validators.RegexValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.RegexValidator</span></code></a></p>
+<p>A Postal Code Validator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">PostalCodeValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;V8X 1G1&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">PostalCodeValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;V8X1G1&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">PostalCodeValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;V8X XG1&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">PostalCodeValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;8X XG1&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">PostalCodeValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;V8X 1g1&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.RegexValidator">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">RegexValidator</code><span class="sig-paren">(</span><em>msg</em>, <em>regex</em>, <em>options=0</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.RegexValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<p>A regular expression validator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">RegexValidator</span><span class="p">(</span><span class="s1">&#39;invalid input&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]+$&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">RegexValidator</span><span class="p">(</span><span class="s1">&#39;invalid input&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]+$&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_valid</span> <span class="o">=</span> <span class="n">RegexValidator</span><span class="p">(</span><span class="s1">&#39;invalid input&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]+$&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_valid</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_valid</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">RegexValidator</span><span class="p">(</span><span class="s1">&#39;invalid input&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]+$&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">msg</span>
+<span class="go">&#39;invalid input&#39;</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="zoom.validators.RegexValidator.valid">
+<code class="descname">valid</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.RegexValidator.valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>tests validity of a value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.TimeValidator">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">TimeValidator</code><span class="sig-paren">(</span><em>time_format='%I:%M %p'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.TimeValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<p>Time validator</p>
+<p>Validates a time in a variety of formats with time_format
+being the preferred format.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">locale</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">locale</span><span class="o">.</span><span class="n">setlocale</span><span class="p">(</span><span class="n">locale</span><span class="o">.</span><span class="n">LC_ALL</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">)</span>
+<span class="go">&#39;C&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">TimeValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;asdf&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">msg</span>
+<span class="go">&#39;enter valid time in 12 hour &quot;02:20 PM&quot; format&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;10:20&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;07:20&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;7:20&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;10:70&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;14:20&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;10:20 PM&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;14:70&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;10:20:10&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;10:20:70&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;10:70:20&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">time</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="zoom.validators.TimeValidator.valid_formats">
+<code class="descname">valid_formats</code><em class="property"> = ['%I:%M %p', '%I:%M:%S %p', '%H:%M', '%H:%M:%S']</em><a class="headerlink" href="#zoom.validators.TimeValidator.valid_formats" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.URLValidator">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">URLValidator</code><a class="headerlink" href="#zoom.validators.URLValidator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="../zoom.html#zoom.validators.RegexValidator" title="zoom.validators.RegexValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.RegexValidator</span></code></a></p>
+<p>A URL Validator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">URLValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;http://google.com&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">URLValidator</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;test123&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.validators.Validator">
+<em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">Validator</code><span class="sig-paren">(</span><em>msg</em>, <em>test</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.Validator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A content validator.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span> <span class="o">=</span> <span class="n">Validator</span><span class="p">(</span><span class="s1">&#39;not true&#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="o">.</span><span class="n">valid</span><span class="p">([])</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="o">.</span><span class="n">msg</span>
+<span class="go">&#39;not true&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_true</span><span class="o">.</span><span class="n">clean</span><span class="p">({})</span>
+<span class="go">{}</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="zoom.validators.Validator.clean">
+<code class="descname">clean</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.Validator.clean" title="Permalink to this definition">¶</a></dt>
+<dd><p>cleans up a value</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.validators.Validator.valid">
+<code class="descname">valid</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.Validator.valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>tests validity of a value</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.validators.email_valid">
+<code class="descclassname">zoom.validators.</code><code class="descname">email_valid</code><span class="sig-paren">(</span><em>email</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.email_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>test for valid email address</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">email_valid</span><span class="p">(</span><span class="s1">&#39;test@testco.com&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">email_valid</span><span class="p">(</span><span class="s1">&#39;test@@testco.com&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">email_valid</span><span class="p">(</span><span class="s1">&#39;test@testco&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.validators.empty">
+<code class="descclassname">zoom.validators.</code><code class="descname">empty</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.empty" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if a value is empty</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.validators.image_mime_type_valid">
+<code class="descclassname">zoom.validators.</code><code class="descname">image_mime_type_valid</code><span class="sig-paren">(</span><em>data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.image_mime_type_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>check data against the more commonly browser supported mime types</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.validators.is_present">
+<code class="descclassname">zoom.validators.</code><code class="descname">is_present</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.is_present" title="Permalink to this definition">¶</a></dt>
+<dd><p>test if a value is present</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_present</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_present</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.validators.latitude_valid">
+<code class="descclassname">zoom.validators.</code><code class="descname">latitude_valid</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.latitude_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>test for valid latitude</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">latitude_valid</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">latitude_valid</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">latitude_valid</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.validators.longitude_valid">
+<code class="descclassname">zoom.validators.</code><code class="descname">longitude_valid</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.longitude_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>test for valid longitude</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">longitude_valid</span><span class="p">(</span><span class="mi">145</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">longitude_valid</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">longitude_valid</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.validators.number_valid">
+<code class="descclassname">zoom.validators.</code><code class="descname">number_valid</code><span class="sig-paren">(</span><em>value</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.number_valid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Test for valid number</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="mf">1.12039123</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="s1">&#39;1.12039123&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="s1">&#39;x1.12039123&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="s1">&#39;t&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">number_valid</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># not sure if this is what&#39;s we want</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,598 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.middleware module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/introduction.html">Zoom API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.middleware module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/advancedtopics/zoom.middleware.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.middleware">
+<span id="zoom-middleware-module"></span><h1>zoom.middleware module<a class="headerlink" href="#module-zoom.middleware" title="Permalink to this headline">¶</a></h1>
+<p>zoom.middleware</p>
+<p>A set of functions that can be placed between the HTTP server and
+the application layer.  These functions can provide various services
+such as content serving, caching, error trapping, security, etc..</p>
+<dl class="function">
+<dt id="zoom.middleware.capture_stdout">
+<code class="descclassname">zoom.middleware.</code><code class="descname">capture_stdout</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.capture_stdout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Capture printed output for debugging purposes</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_content</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hey&#39;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">HTMLResponse</span><span class="p">(</span><span class="s1">&#39;I said {*stdout*}&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">capture_stdout</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">get_content</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">content</span>
+<span class="go">&#39;I said hey\n&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.check_csrf">
+<code class="descclassname">zoom.middleware.</code><code class="descname">check_csrf</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.check_csrf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check csrf token</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">providers</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">csrf_token</span><span class="o">=</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Pat&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost/&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">check_csrf</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">zoom</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">RedirectResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">csrf_token</span><span class="o">=</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Pat&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost/&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">csrf_token</span><span class="o">=</span><span class="s1">&#39;4321&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">check_csrf</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">zoom</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">RedirectResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">csrf_token</span><span class="o">=</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Pat&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost/&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">csrf_token</span><span class="o">=</span><span class="s1">&#39;1234&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">check_csrf</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">zoom</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">RedirectResponse</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.debug">
+<code class="descclassname">zoom.middleware.</code><code class="descname">debug</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Debugging page</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">debug</span><span class="p">(</span><span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost/&#39;</span><span class="p">)))</span>
+<span class="go">&lt;class &#39;zoom.response.HTMLResponse&#39;&gt;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.display_errors">
+<code class="descclassname">zoom.middleware.</code><code class="descname">display_errors</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.display_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display errors for developers</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">templates_paths</span><span class="o">=</span><span class="p">[])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="s1">&#39;localhost&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">request</span> <span class="o">=</span> <span class="n">request</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">site</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">users</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;admin&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">throw</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;ouch!&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">display_errors</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">throw</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">HTMLResponse</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">is_admin</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">display_errors</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">throw</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">HTMLResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.get_csrf_token">
+<code class="descclassname">zoom.middleware.</code><code class="descname">get_csrf_token</code><span class="sig-paren">(</span><em>session</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.get_csrf_token" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate a csrf token</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">session</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="s1">&#39;csrf_token&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">bool</span><span class="p">(</span><span class="n">get_csrf_token</span><span class="p">(</span><span class="n">session</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="s1">&#39;csrf_token&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">_</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">forms</span><span class="o">.</span><span class="n">form_for</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">hasattr</span><span class="p">(</span><span class="n">session</span><span class="p">,</span> <span class="s1">&#39;csrf_token&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.handle">
+<code class="descclassname">zoom.middleware.</code><code class="descname">handle</code><span class="sig-paren">(</span><em>request</em>, <em>handlers=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>handle a request</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.not_found">
+<code class="descclassname">zoom.middleware.</code><code class="descname">not_found</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.not_found" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a 404 page for site</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">theme</span> <span class="o">=</span> <span class="s1">&#39;default&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;My Site&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">app</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">theme</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">site</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">not_found</span><span class="p">(</span><span class="n">request</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">status</span>
+<span class="go">&#39;404 Not Found&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.reset_modules">
+<code class="descclassname">zoom.middleware.</code><code class="descname">reset_modules</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.reset_modules" title="Permalink to this definition">¶</a></dt>
+<dd><p>reset the modules to a known starting set</p>
+<p>Memorizes the modules in use on the first round.  Then
+on every subsequent round, it removes any extra modules
+before passing the request on.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">loader</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="kn">import</span> <span class="nn">zoom.audit</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">not_a_loader</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">pass</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="s1">&#39;zoom.audit&#39;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="k">del</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">[</span><span class="s1">&#39;zoom.audit&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fresh</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">reset_modules</span><span class="p">(</span><span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">),</span> <span class="n">loader</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fresh</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">reset_modules</span><span class="p">(</span><span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">),</span> <span class="n">not_a_loader</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">fresh</span> <span class="o">==</span> <span class="nb">list</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.serve_favicon">
+<code class="descclassname">zoom.middleware.</code><code class="descname">serve_favicon</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.serve_favicon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serve a favicon file</p>
+<p>This function only handles the case where the favicon
+reference is /favicon.ico, as would be typical in a local
+dev environment.  For production environments the favicon
+would typically be either part of the theme or would
+be stored statically, both of which would typically be
+served up by your proxy or your web server depending on
+your config.</p>
+<p>If your web sever is not configured to handle static or
+themes for you, Zoom will happily serve them up via
+the serve_theme or serve_static middleware found
+elsewhere in this module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">zoom.request</span> <span class="k">import</span> <span class="n">Request</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">content_handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="s1">&#39;200 OK&#39;</span><span class="p">,</span> <span class="p">[],</span> <span class="s1">&#39;nuthin&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span><span class="n">REQUEST_URI</span><span class="o">=</span><span class="s1">&#39;/favicon.ico&#39;</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">serve_favicon</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">request</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">content_handler</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">ICOResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">Request</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="nb">dict</span><span class="p">(</span><span class="n">REQUEST_URI</span><span class="o">=</span><span class="s1">&#39;/&#39;</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">status</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">serve_favicon</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="n">request</span><span class="p">,</span>
+<span class="gp">... </span>    <span class="n">content_handler</span><span class="p">,</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">content</span>
+<span class="go">&#39;nuthin&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.serve_html">
+<code class="descclassname">zoom.middleware.</code><code class="descname">serve_html</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.serve_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serve HTML from the Content app</p>
+<p>Direct a request for an HTML page to the content app</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/index.html&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;/index.html&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">serve_html</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;/content/index.html&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/index.css&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;/index.css&#39;</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">serve_html</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s1">&#39;/index.css&#39;</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.serve_images">
+<code class="descclassname">zoom.middleware.</code><code class="descname">serve_images</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.serve_images" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serve an image file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/images/banner_logo.png&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">serve_images</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">PNGResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/notimages/banner_logo.png&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serve_images</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.serve_redirects">
+<code class="descclassname">zoom.middleware.</code><code class="descname">serve_redirects</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.serve_redirects" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serves redirects</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">serve_redirects</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">Bunch</span><span class="p">(</span><span class="n">abs_url</span><span class="o">=</span><span class="s1">&#39;http://localhost&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">redirect_home</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">response</span><span class="o">.</span><span class="n">RedirectResponse</span><span class="p">(</span><span class="s1">&#39;/home&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">serve_redirects</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">redirect_home</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+<span class="go">OrderedDict([(&#39;Location&#39;, &#39;/home&#39;)])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.serve_response">
+<code class="descclassname">zoom.middleware.</code><code class="descname">serve_response</code><span class="sig-paren">(</span><em>*path</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.serve_response" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serve up various respones with their correct response type</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoom_js</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">zoompath</span><span class="p">(</span><span class="s1">&#39;web/www/static/zoom/zoom.js&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">serve_response</span><span class="p">(</span><span class="n">zoom_js</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">JavascriptResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoom_path</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">zoompath</span><span class="p">(</span><span class="s1">&#39;web&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">serve_response</span><span class="p">(</span><span class="n">zoom_path</span><span class="p">,</span> <span class="s1">&#39;www/static/zoom/nada.js&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">JavascriptResponse</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">content</span>
+<span class="go">&quot;file not found: &#39;www/static/zoom/nada.js&#39;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">status</span>
+<span class="go">&#39;404 Not Found&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoom_path</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">zoompath</span><span class="p">(</span><span class="s1">&#39;web&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">serve_response</span><span class="p">(</span><span class="n">zoom_path</span><span class="p">,</span> <span class="s1">&#39;www/static/zoom/images&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">response</span><span class="p">,</span> <span class="n">JavascriptResponse</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">content</span>
+<span class="go">&quot;unknown file type &#39;&#39;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span><span class="o">.</span><span class="n">status</span>
+<span class="go">&#39;415 Unsupported Media Type&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.serve_static">
+<code class="descclassname">zoom.middleware.</code><code class="descname">serve_static</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.serve_static" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serve a static file</p>
+<p>Static files can be served in serveral ways.  This particular
+middleware intended to be inserted into the middleware stack
+near the front before most other things.  The reason being is
+that in many cases the static files are not site specific or
+app specific but rather are shared by the entire instance.  In
+addition, many times static files require no authorization or
+special rights.  This means that in many cases static files
+can be served without knowing who is asking or what site they
+are for.  That is what this middleware does.</p>
+<p>This handler is mainly intended for development purposes as
+in a production evironment this type of content would typically
+be served up by the HTTP server or a caching layer.</p>
+<p>Note: This layer looks in four separate places for static files
+to serve.  Three related to the zoom instance, and one, as a last
+resort, from the zoom library itself.  If you are concerned
+about exposing the wrong files, be careful what you put in those
+directories or better yet, use a proxy.</p>
+<p>In addition to this instance wide static serving Sites and Apps
+may implement static file serving.  If they do, this layer is
+unaware of that fact.</p>
+<p>The locations this handler will look are relative to the zoom
+instance. They are:</p>
+<blockquote>
+<div>&lt;instance&gt;/static
+&lt;instance&gt;/www/static
+&lt;instance&gt;/../static
+zoom/web/www/static</div></blockquote>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/static/zoom/zoom.js&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">serve_static</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">JavascriptResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/notstatic/zoom/zoom.js&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">serve_static</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">JavascriptResponse</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.serve_themes">
+<code class="descclassname">zoom.middleware.</code><code class="descname">serve_themes</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.serve_themes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serve a theme file</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/themes/default/css/style.css&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span><span class="o">.</span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">serve_themes</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">CSSResponse</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://localhost/notthemes/default/default.html&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">build</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">serve_themes</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.middleware.trap_errors">
+<code class="descclassname">zoom.middleware.</code><code class="descname">trap_errors</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.middleware.trap_errors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Trap exceptions and raise a server error</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">exception_handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;error!&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">content_handler</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="o">*</span><span class="n">rest</span><span class="p">):</span>
+<span class="gp">... </span>    <span class="k">return</span> <span class="n">HTMLResponse</span><span class="p">(</span><span class="s1">&#39;nuthin&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">request</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">trap_errors</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">content_handler</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">status</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">as_wsgi</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">content</span>
+<span class="go">b&#39;nuthin&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">status</span>
+<span class="go">&#39;200 OK&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">response</span> <span class="o">=</span> <span class="n">trap_errors</span><span class="p">(</span><span class="n">request</span><span class="p">,</span> <span class="n">exception_handler</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">status</span><span class="p">,</span> <span class="n">headers</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">as_wsgi</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">status</span>
+<span class="go">&#39;500 Internal Server Error&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Exception: error!&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

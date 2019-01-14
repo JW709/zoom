@@ -1,0 +1,318 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.component module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/introduction.html">Zoom API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.component module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/advancedtopics/zoom.component.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.component">
+<span id="zoom-component-module"></span><h1>zoom.component module<a class="headerlink" href="#module-zoom.component" title="Permalink to this headline">¶</a></h1>
+<p>zoom.component</p>
+<p>Components encapsulate all of the parts that are required to make a
+component appear on a page.  This can include HTML, CSS and Javascript
+parts and associated libraries.</p>
+<p>Components parts are assembled in the way that kind of part
+needs to be treated.  For example HTML parts are simply joined
+together in order and returned.  CSS parts on the other hand are
+joined together but any duplicate parts are ignored.</p>
+<p>When a caller supplies JS or CSS as part of the component being assembled
+these extra parts are submitted to the system to be included in thier
+proper place within a response (typically a page template).</p>
+<p>The Component object is currently experimental and is intended to be used
+in future releases.</p>
+<dl class="class">
+<dt id="zoom.component.Component">
+<em class="property">class </em><code class="descclassname">zoom.component.</code><code class="descname">Component</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.component.Component" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>component of a page response</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Component</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
+<span class="go">&lt;Component: {&#39;html&#39;: []}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">+=</span> <span class="s1">&#39;test&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
+<span class="go">&lt;Component: {&#39;html&#39;: [&#39;test&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">+=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">css</span><span class="o">=</span><span class="s1">&#39;mycss&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
+<span class="go">&lt;Component: {&#39;css&#39;: OrderedSet([&#39;mycss&#39;]), &#39;html&#39;: [&#39;test&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">+=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">css</span><span class="o">=</span><span class="s1">&#39;mycss&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
+<span class="go">&lt;Component: {&#39;css&#39;: OrderedSet([&#39;mycss&#39;]), &#39;html&#39;: [&#39;test&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">+=</span> <span class="s1">&#39;test2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">parts</span><span class="o">.</span><span class="n">items</span><span class="p">())</span>
+<span class="go">[(&#39;css&#39;, OrderedSet([&#39;mycss&#39;])), (&#39;html&#39;, [&#39;test&#39;, &#39;test2&#39;])]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Component</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;test1&#39;</span> <span class="o">+</span> <span class="s1">&#39;test2&#39;</span>
+<span class="go">&lt;Component: {&#39;html&#39;: [&#39;test1&#39;, &#39;test2&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Component</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;test1&#39;</span> <span class="o">+</span> <span class="nb">dict</span><span class="p">(</span><span class="n">css</span><span class="o">=</span><span class="s1">&#39;mycss&#39;</span><span class="p">)</span>
+<span class="go">&lt;Component: {&#39;css&#39;: OrderedSet([&#39;mycss&#39;]), &#39;html&#39;: [&#39;test1&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">))</span>
+<span class="go">&lt;Component: {&#39;html&#39;: [&#39;test1&#39;, &#39;test2&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Component</span><span class="p">(</span>
+<span class="gp">... </span>   <span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css1&#39;</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">,</span> <span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test3&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css3&#39;</span><span class="p">)),</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">&lt;Component: {&#39;css&#39;: OrderedSet([&#39;css1&#39;, &#39;css3&#39;]), &#39;html&#39;: [&#39;test1&#39;, &#39;test2&#39;, &#39;test3&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Component</span><span class="p">((</span><span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css1&#39;</span><span class="p">),</span> <span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css2&#39;</span><span class="p">)))</span>
+<span class="go">&lt;Component: {&#39;css&#39;: OrderedSet([&#39;css1&#39;, &#39;css2&#39;]), &#39;html&#39;: [&#39;test1&#39;, &#39;test2&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css1&#39;</span><span class="p">),</span> <span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css2&#39;</span><span class="p">))</span>
+<span class="go">&lt;Component: {&#39;css&#39;: OrderedSet([&#39;css1&#39;, &#39;css2&#39;]), &#39;html&#39;: [&#39;test1&#39;, &#39;test2&#39;]}&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zoom</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">parts</span> <span class="o">=</span> <span class="n">Component</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">Component</span><span class="p">(</span><span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test1&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css1&#39;</span><span class="p">),</span> <span class="n">Component</span><span class="p">(</span><span class="s1">&#39;test2&#39;</span><span class="p">,</span> <span class="n">css</span><span class="o">=</span><span class="s1">&#39;css2&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="o">.</span><span class="n">render</span><span class="p">()</span>
+<span class="go">&#39;test1test2&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">page2</span> <span class="o">=</span> \
+<span class="gp">... </span>   <span class="n">Component</span><span class="p">()</span> <span class="o">+</span> \
+<span class="gp">... </span>   <span class="s1">&#39;&lt;h1&gt;Title&lt;/h1&gt;&#39;</span> <span class="o">+</span> \
+<span class="gp">... </span>   <span class="nb">dict</span><span class="p">(</span><span class="n">css</span><span class="o">=</span><span class="s1">&#39;mycss&#39;</span><span class="p">)</span> <span class="o">+</span> \
+<span class="gp">... </span>   <span class="nb">dict</span><span class="p">(</span><span class="n">js</span><span class="o">=</span><span class="s1">&#39;myjs&#39;</span><span class="p">)</span> <span class="o">+</span> \
+<span class="gp">... </span>   <span class="s1">&#39;page body goes here&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">(</span>
+<span class="gp">... </span>   <span class="s2">&quot;&lt;Component: {&#39;css&#39;: OrderedSet([&#39;mycss&#39;]), &quot;</span>
+<span class="gp">... </span>   <span class="s2">&quot;&#39;html&#39;: [&#39;&lt;h1&gt;Title&lt;/h1&gt;&#39;, &#39;page body goes here&#39;], &quot;</span>
+<span class="gp">... </span>   <span class="s2">&quot;&#39;js&#39;: OrderedSet([&#39;myjs&#39;])}&gt;&quot;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1">#print(repr(page2) + &#39;\n&#39; + t)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">repr</span><span class="p">(</span><span class="n">page2</span><span class="p">)</span> <span class="o">==</span> <span class="n">t</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="zoom.component.Component.render">
+<code class="descname">render</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.component.Component.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>renders the component</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.component.component">
+<code class="descclassname">zoom.component.</code><code class="descname">component</code><a class="headerlink" href="#zoom.component.component" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="../zoom.html#zoom.component.Component" title="zoom.component.Component"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.component.Component</span></code></a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.component.compose">
+<code class="descclassname">zoom.component.</code><code class="descname">compose</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.component.compose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compose a response - DEPRECATED</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.component.handler">
+<code class="descclassname">zoom.component.</code><code class="descname">handler</code><span class="sig-paren">(</span><em>request</em>, <em>handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.component.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Component handler</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

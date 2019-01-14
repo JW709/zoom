@@ -1,0 +1,427 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.apps module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../gettingstarted/introduction.html">Zoom API Documentation</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.apps module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/set4/zoom.apps.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.apps">
+<span id="zoom-apps-module"></span><h1>zoom.apps module<a class="headerlink" href="#module-zoom.apps" title="Permalink to this headline">¶</a></h1>
+<p>zoom.apps</p>
+<p>handles requests by locating and calling a suitable app</p>
+<dl class="class">
+<dt id="zoom.apps.App">
+<em class="property">class </em><code class="descclassname">zoom.apps.</code><code class="descname">App</code><a class="headerlink" href="#zoom.apps.App" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A Zoom application</p>
+<p>Looks for a method to satisfy the request.  If the method is
+not specified, it falls back to ‘index’.  If there is no
+method on the app object to satisfy the method then it looks
+for a file in the app directory by that same name.  If it
+finds such a file it looks for the an entrypoint and if found
+it calls the entrypoint with the parameters the entrypoint
+expects.</p>
+<dl class="method">
+<dt id="zoom.apps.App.process">
+<code class="descname">process</code><span class="sig-paren">(</span><em>*route</em>, <em>**data</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.App.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process request parameters</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.apps.App.static">
+<code class="descname">static</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.App.static" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.apps.AppProxy">
+<em class="property">class </em><code class="descclassname">zoom.apps.</code><code class="descname">AppProxy</code><span class="sig-paren">(</span><em>name</em>, <em>filename</em>, <em>site</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.AppProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>App Proxy</p>
+<p>Contains the various extra supporting parts of an app besides
+the actual functionality.  Apps themselves are simply callables
+that accept a request and return a response.  They can be implemented
+as simple functions or as something more substantial such as
+a subclass of the App class above.  That’s entirely up to the
+app developer.  The AppProxy takes care of the other parts that
+an app needs, from it’s location to it’s icon to it’s config files.</p>
+<dl class="attribute">
+<dt id="zoom.apps.AppProxy.description">
+<code class="descname">description</code><a class="headerlink" href="#zoom.apps.AppProxy.description" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the app description</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.apps.AppProxy.get_config">
+<code class="descname">get_config</code><span class="sig-paren">(</span><em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.AppProxy.get_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the app config</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.apps.AppProxy.get_icon_view">
+<code class="descname">get_icon_view</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.AppProxy.get_icon_view" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.AppProxy.keywords">
+<code class="descname">keywords</code><a class="headerlink" href="#zoom.apps.AppProxy.keywords" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the app keywords</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.apps.AppProxy.menu">
+<code class="descname">menu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.AppProxy.menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>generate an app menu</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.AppProxy.method">
+<code class="descname">method</code><a class="headerlink" href="#zoom.apps.AppProxy.method" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the app callable entry point</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.apps.AppProxy.read_config">
+<code class="descname">read_config</code><span class="sig-paren">(</span><em>section</em>, <em>key</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.AppProxy.read_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>read app config file values</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.apps.AppProxy.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.AppProxy.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>run the app</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="zoom.apps.AppProxy.run_background_jobs">
+<code class="descname">run_background_jobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.AppProxy.run_background_jobs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.AppProxy.templates_paths">
+<code class="descname">templates_paths</code><a class="headerlink" href="#zoom.apps.AppProxy.templates_paths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate Templates Paths</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.AppProxy.title">
+<code class="descname">title</code><a class="headerlink" href="#zoom.apps.AppProxy.title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the app title</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.apps.NoApp">
+<em class="property">class </em><code class="descclassname">zoom.apps.</code><code class="descname">NoApp</code><a class="headerlink" href="#zoom.apps.NoApp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>default app used when no app is available</p>
+<p>This is mostly used so the helpers remain valid
+and return reasonable values when no app is available.</p>
+<dl class="attribute">
+<dt id="zoom.apps.NoApp.menu">
+<code class="descname">menu</code><em class="property"> = ''</em><a class="headerlink" href="#zoom.apps.NoApp.menu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.NoApp.menu_items">
+<code class="descname">menu_items</code><em class="property"> = []</em><a class="headerlink" href="#zoom.apps.NoApp.menu_items" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.NoApp.name">
+<code class="descname">name</code><em class="property"> = 'none'</em><a class="headerlink" href="#zoom.apps.NoApp.name" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.NoApp.theme">
+<code class="descname">theme</code><em class="property"> = None</em><a class="headerlink" href="#zoom.apps.NoApp.theme" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="zoom.apps.NoApp.url">
+<code class="descname">url</code><em class="property"> = ''</em><a class="headerlink" href="#zoom.apps.NoApp.url" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.get_default_app_name">
+<code class="descclassname">zoom.apps.</code><code class="descname">get_default_app_name</code><span class="sig-paren">(</span><em>site</em>, <em>user</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.get_default_app_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the default app for the currrent user</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.get_main_apps">
+<code class="descclassname">zoom.apps.</code><code class="descname">get_main_apps</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.get_main_apps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the main apps.</p>
+<p>Main apps are apps that appear in the main menu, which is usually found
+at the top of a web site’s pages.  The system menu typically includes apps
+such as home, admin and the apps app.</p>
+<p>This list can be defined in the site.ini file in the [apps] section using the
+key <cite>main</cite>.  A example is provided in the default site.ini file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.get_system_apps">
+<code class="descclassname">zoom.apps.</code><code class="descname">get_system_apps</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.get_system_apps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list containing the system apps.</p>
+<p>System apps are apps that appear in the system menu, which is usually found
+at the top left of a web site.  The system menu typically includes apps such
+as login, logout, profile and register.</p>
+<p>This list can be defined in the site.ini file in the [apps] section using the
+key <cite>system</cite>.  A example is provided in the default site.ini file.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.handle">
+<code class="descclassname">zoom.apps.</code><code class="descname">handle</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>handle a request</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.handler">
+<code class="descclassname">zoom.apps.</code><code class="descname">handler</code><span class="sig-paren">(</span><em>request</em>, <em>next_handler</em>, <em>*rest</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dispatch request to an application</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.helpers">
+<code class="descclassname">zoom.apps.</code><code class="descname">helpers</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.helpers" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a dict of app helpers</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.load_app">
+<code class="descclassname">zoom.apps.</code><code class="descname">load_app</code><span class="sig-paren">(</span><em>site</em>, <em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.load_app" title="Permalink to this definition">¶</a></dt>
+<dd><p>get the location of an app by name</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.load_module">
+<code class="descclassname">zoom.apps.</code><code class="descname">load_module</code><span class="sig-paren">(</span><em>module</em>, <em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.load_module" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dynamically load a module</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.main_menu">
+<code class="descclassname">zoom.apps.</code><code class="descname">main_menu</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.main_menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the main menu.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.main_menu_items">
+<code class="descclassname">zoom.apps.</code><code class="descname">main_menu_items</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.main_menu_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the main menu.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.respond">
+<code class="descclassname">zoom.apps.</code><code class="descname">respond</code><span class="sig-paren">(</span><em>content</em>, <em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.respond" title="Permalink to this definition">¶</a></dt>
+<dd><p>construct a response</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.system_menu">
+<code class="descclassname">zoom.apps.</code><code class="descname">system_menu</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.system_menu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the system menu.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.apps.system_menu_items">
+<code class="descclassname">zoom.apps.</code><code class="descname">system_menu_items</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.apps.system_menu_items" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the system menu.</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
