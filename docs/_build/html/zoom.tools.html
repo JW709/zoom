@@ -1,0 +1,653 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.tools module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="zoom.utils module" href="zoom.utils.html" />
+    <link rel="prev" title="zoom.html module" href="zoom.html.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Test</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zoom.database.html">zoom.database module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zoom.html.html">zoom.html module</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Set 1</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">zoom.tools module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zoom.utils.html">zoom.utils module</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.tools module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/zoom.tools.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.tools">
+<span id="zoom-tools-module"></span><h1>zoom.tools module<a class="headerlink" href="#module-zoom.tools" title="Permalink to this headline">¶</a></h1>
+<p>zoom.tools</p>
+<dl class="class">
+<dt id="zoom.tools.Redirector">
+<em class="property">class </em><code class="descclassname">zoom.tools.</code><code class="descname">Redirector</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.Redirector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="method">
+<dt id="zoom.tools.Redirector.render">
+<code class="descname">render</code><span class="sig-paren">(</span><em>request</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.Redirector.render" title="Permalink to this definition">¶</a></dt>
+<dd><p>render redirect</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.ensure_listy">
+<code class="descclassname">zoom.tools.</code><code class="descname">ensure_listy</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.ensure_listy" title="Permalink to this definition">¶</a></dt>
+<dd><p>ensure object is wrapped in a list if it can’t behave like one</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_listy</span><span class="p">(</span><span class="s1">&#39;not listy&#39;</span><span class="p">)</span>
+<span class="go">[&#39;not listy&#39;]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_listy</span><span class="p">([</span><span class="s1">&#39;already listy&#39;</span><span class="p">])</span>
+<span class="go">[&#39;already listy&#39;]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ensure_listy</span><span class="p">([])</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.first_day_of_last_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">first_day_of_last_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.first_day_of_last_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first day of last month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_day_of_last_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="go">datetime.date(2015, 12, 1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.first_day_of_next_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">first_day_of_next_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.first_day_of_next_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the first day of next month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_day_of_next_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">datetime.date(2016, 3, 1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.first_day_of_the_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">first_day_of_the_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.first_day_of_the_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the first day of the month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">first_day_of_the_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<span class="go">datetime.date(2016, 12, 1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.get_markdown_converter">
+<code class="descclassname">zoom.tools.</code><code class="descname">get_markdown_converter</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.get_markdown_converter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a configured markdown converter</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">markdown</span><span class="p">(</span><span class="s2">&quot;a [[wikilink]] test&quot;</span><span class="p">)</span>
+<span class="go">&#39;&lt;p&gt;a &lt;a class=&quot;wikilink&quot; href=&quot;wikilink.html&quot;&gt;wikilink&lt;/a&gt; test&lt;/p&gt;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">markdown</span><span class="p">(</span><span class="s2">&quot;a [[wikilink.html]] test&quot;</span><span class="p">)</span>
+<span class="go">&#39;&lt;p&gt;a [[wikilink.html]] test&lt;/p&gt;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.get_template">
+<code class="descclassname">zoom.tools.</code><code class="descname">get_template</code><span class="sig-paren">(</span><em>template_name='default'</em>, <em>theme='default'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.get_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get site page template</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.hide_helpers">
+<code class="descclassname">zoom.tools.</code><code class="descname">hide_helpers</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.hide_helpers" title="Permalink to this definition">¶</a></dt>
+<dd><p>prevent helper requests from being filled</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.home">
+<code class="descclassname">zoom.tools.</code><code class="descname">home</code><span class="sig-paren">(</span><em>view=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.home" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redirect to application home.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.how_long">
+<code class="descclassname">zoom.tools.</code><code class="descname">how_long</code><span class="sig-paren">(</span><em>time1</em>, <em>time2</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.how_long" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string that describes the difference between two times.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">time</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">now</span> <span class="o">=</span> <span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span>
+<span class="go">&#39;a moment&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="n">one_minute</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;20 seconds&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="n">one_hour</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;20 minutes&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="n">one_day</span> <span class="o">/</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;8 hours&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;1 day&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;2 days&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">15</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;2 weeks&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">35</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;over a month&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">65</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;over 2 months&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">361</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;almost a year&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">one_minute</span><span class="p">)</span>
+<span class="go">&#39;20 minutes&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;almost two years&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mf">3.25</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;over 3 years&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">now</span> <span class="o">+</span> <span class="mf">1.25</span> <span class="o">*</span> <span class="mi">365</span> <span class="o">*</span> <span class="n">one_day</span><span class="p">)</span>
+<span class="go">&#39;over a year&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">today</span><span class="p">(),</span> <span class="n">tomorrow</span><span class="p">(</span><span class="n">today</span><span class="p">()))</span>
+<span class="go">&#39;1 day&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">today</span><span class="p">(),</span> <span class="n">now</span> <span class="o">+</span> <span class="n">one_week</span><span class="p">)</span>
+<span class="go">&#39;7 days&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">())</span>
+<span class="go">&#39;a moment&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">failed</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">try</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">how_long</span><span class="p">(</span><span class="n">now</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="gp">... </span><span class="k">except</span> <span class="ne">TypeError</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">failed</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">failed</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.how_long_ago">
+<code class="descclassname">zoom.tools.</code><code class="descname">how_long_ago</code><span class="sig-paren">(</span><em>anytime</em>, <em>since=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.how_long_ago" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a string that describes the difference between any time and now.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">now</span> <span class="o">=</span> <span class="n">now</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long_ago</span><span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">datetime</span><span class="o">.</span><span class="n">timedelta</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">&#39;2 days ago&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long_ago</span><span class="p">(</span><span class="n">now</span> <span class="o">+</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">one_minute</span><span class="p">)</span>
+<span class="go">&#39;19 minutes from now&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long_ago</span><span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">one_minute</span><span class="p">)</span>
+<span class="go">&#39;20 minutes ago&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">how_long_ago</span><span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="mi">20</span> <span class="o">*</span> <span class="n">one_minute</span><span class="p">,</span> <span class="n">now</span> <span class="o">-</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">one_minute</span><span class="p">)</span>
+<span class="go">&#39;10 minutes ago&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.htmlquote">
+<code class="descclassname">zoom.tools.</code><code class="descname">htmlquote</code><span class="sig-paren">(</span><em>text</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.htmlquote" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encodes <cite>text</cite> for raw use in HTML.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">htmlquote</span><span class="p">(</span><span class="sa">u</span><span class="s2">&quot;&lt;&#39;&amp;</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+<span class="go">&#39;&amp;lt;&amp;#39;&amp;amp;&amp;quot;&amp;gt;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">htmlquote</span><span class="p">(</span><span class="s2">&quot;&lt;&#39;&amp;</span><span class="se">\&quot;</span><span class="s2">&gt;&quot;</span><span class="p">)</span>
+<span class="go">&#39;&amp;lt;&amp;#39;&amp;amp;&amp;quot;&amp;gt;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.is_listy">
+<code class="descclassname">zoom.tools.</code><code class="descname">is_listy</code><span class="sig-paren">(</span><em>obj</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.is_listy" title="Permalink to this definition">¶</a></dt>
+<dd><p>test to see if an object will iterate like a list</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_listy</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_listy</span><span class="p">(</span><span class="nb">set</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_listy</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_listy</span><span class="p">(</span><span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_listy</span><span class="p">(</span><span class="s1">&#39;123&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.last_day_of_last_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">last_day_of_last_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.last_day_of_last_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first day of last month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">last_day_of_last_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="go">datetime.date(2015, 12, 31)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.last_day_of_next_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">last_day_of_next_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.last_day_of_next_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the last day of next month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">last_day_of_next_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">datetime.date(2016, 3, 31)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.last_day_of_the_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">last_day_of_the_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.last_day_of_the_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the last day of the month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">last_day_of_the_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">datetime.date(2016, 2, 29)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">last_day_of_the_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">datetime.date(2016, 2, 29)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.last_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">last_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.last_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns date range for last month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">last_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="go">(datetime.date(2015, 12, 1), datetime.date(2015, 12, 31))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.load">
+<code class="descclassname">zoom.tools.</code><code class="descname">load</code><span class="sig-paren">(</span><em>pathname</em>, <em>encoding='utf-8'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a file and return the contents</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.load_content">
+<code class="descclassname">zoom.tools.</code><code class="descname">load_content</code><span class="sig-paren">(</span><em>pathname</em>, <em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.load_content" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a content file and use it to format parameters</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.load_template">
+<code class="descclassname">zoom.tools.</code><code class="descname">load_template</code><span class="sig-paren">(</span><em>name</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.load_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a template from the theme folder.</p>
+<p>Templates usually have .html file extensions and this module
+will assume that’s what is desired unless otherwise specified.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.markdown">
+<code class="descclassname">zoom.tools.</code><code class="descname">markdown</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.markdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transform content with markdown</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">markdown</span><span class="p">(</span><span class="s1">&#39;this **is** bold&#39;</span><span class="p">)</span>
+<span class="go">&#39;&lt;p&gt;this &lt;strong&gt;is&lt;/strong&gt; bold&lt;/p&gt;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.next_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">next_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.next_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns date range for next month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">next_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="go">(datetime.date(2016, 2, 1), datetime.date(2016, 2, 29))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.now">
+<code class="descclassname">zoom.tools.</code><code class="descname">now</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.now" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current datetime</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.redirect_to">
+<code class="descclassname">zoom.tools.</code><code class="descname">redirect_to</code><span class="sig-paren">(</span><em>*args</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.redirect_to" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a redirect response for a URL.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.restore_helpers">
+<code class="descclassname">zoom.tools.</code><code class="descname">restore_helpers</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.restore_helpers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restores content helpers to their usual form</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.this_month">
+<code class="descclassname">zoom.tools.</code><code class="descname">this_month</code><span class="sig-paren">(</span><em>any_date</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.this_month" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns date range for last month for any date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">this_month</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="go">(datetime.date(2016, 1, 1), datetime.date(2016, 1, 31))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.today">
+<code class="descclassname">zoom.tools.</code><code class="descname">today</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.today" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current date</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">today</span><span class="p">()</span> <span class="o">==</span> <span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.tomorrow">
+<code class="descclassname">zoom.tools.</code><code class="descname">tomorrow</code><span class="sig-paren">(</span><em>any_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.tomorrow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return date for tomorrow</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tomorrow</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="go">datetime.date(2017, 12, 4)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tomorrow</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2016</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">31</span><span class="p">))</span>
+<span class="go">datetime.date(2017, 1, 1)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.unisafe">
+<code class="descclassname">zoom.tools.</code><code class="descname">unisafe</code><span class="sig-paren">(</span><em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.unisafe" title="Permalink to this definition">¶</a></dt>
+<dd><p>safely convert to unicode</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unisafe</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+<span class="go">&#39;&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unisafe</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;123&#39;</span><span class="p">)</span>
+<span class="go">&#39;123&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unisafe</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xe3\x81\x93\xe3\x82\x93\xe3\x81\xab\xe3\x81</span><span class="s1">&#39;</span>
+<span class="gp">... </span>    <span class="sa">b</span><span class="s1">&#39;</span><span class="se">\xa1\xe3\x81\xaf\xe4\xb8\x96\xe7\x95\x8c</span><span class="s1">&#39;</span>
+<span class="gp">... </span><span class="p">)</span>
+<span class="go">&#39;こんにちは世界&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">unisafe</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">&#39;1&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.websafe">
+<code class="descclassname">zoom.tools.</code><code class="descname">websafe</code><span class="sig-paren">(</span><em>content</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.websafe" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return htmlquoted version of content</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">websafe</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;This could be &lt;problematic&gt;&#39;</span><span class="p">)</span>
+<span class="go">&#39;This could be &amp;lt;problematic&amp;gt;&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.yesterday">
+<code class="descclassname">zoom.tools.</code><code class="descname">yesterday</code><span class="sig-paren">(</span><em>any_date=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.yesterday" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return date for yesterday</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">yesterday</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="go">datetime.date(2017, 12, 3)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">yesterday</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">date</span><span class="p">(</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">datetime.date(2016, 12, 31)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.tools.zoompath">
+<code class="descclassname">zoom.tools.</code><code class="descname">zoompath</code><span class="sig-paren">(</span><em>*args</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.tools.zoompath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the location of a standard Zoom asset</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="zoom.utils.html" class="btn btn-neutral float-right" title="zoom.utils module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="zoom.html.html" class="btn btn-neutral" title="zoom.html module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

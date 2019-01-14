@@ -2,15 +2,20 @@
 Zoom Documentation
 ==================
 
-Contents: 
----------
 
 * :ref:`genindex`
 * :ref:`modindex`
 
 .. toctree::
-   :maxdepth: 4
-   :caption: Contents:
+   :caption: Test
+   :maxdepth: 2
 
-   apidoc/modules
-   gettingstarted/introduction
+   zoom.database
+   zoom.html
+
+.. toctree::
+   :caption: Set 1
+   :maxdepth: 2
+
+   zoom.tools
+   zoom.utils

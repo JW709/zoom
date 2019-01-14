@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.buckets module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Test</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zoom.database.html">zoom.database module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zoom.html.html">zoom.html module</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Set 1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zoom.tools.html">zoom.tools module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zoom.utils.html">zoom.utils module</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.buckets module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/zoom.buckets.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.buckets">
+<span id="zoom-buckets-module"></span><h1>zoom.buckets module<a class="headerlink" href="#module-zoom.buckets" title="Permalink to this headline">¶</a></h1>
+<p>buckets</p>
+<p>stores blobs of data</p>
+<dl class="attribute">
+<dt id="zoom.buckets.Bucket">
+<code class="descclassname">zoom.buckets.</code><code class="descname">Bucket</code><a class="headerlink" href="#zoom.buckets.Bucket" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#zoom.buckets.FileBucket" title="zoom.buckets.FileBucket"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.buckets.FileBucket</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.buckets.FileBucket">
+<em class="property">class </em><code class="descclassname">zoom.buckets.</code><code class="descname">FileBucket</code><span class="sig-paren">(</span><em>path</em>, <em>id_factory=&lt;function new_id&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.FileBucket" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>File Bucket</p>
+<p>FileBucket can store and retreive blobs of binary data.  This is
+useful for storing images or files as attachments where you want
+to put the binary data somewhere and be able to retreive it later
+if asked.  The id returned is generally stored in a database or
+somewhere else where it is associated with other entities in the
+system.</p>
+<p>FileBucket stores directly into a folder on the drive of the web
+server where it has sufficient permissions to do so.  This is a
+potential attack area so be careful to take the appropriate
+precautions.</p>
+<p>The location of the buckets is determined by [data] path setting
+in the site.ini configuration file.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">zoom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">sites</span><span class="o">.</span><span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">site</span><span class="o">.</span><span class="n">data_path</span><span class="p">,</span> <span class="s1">&#39;buckets&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ids</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;id_</span><span class="si">%04d</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="mi">9</span><span class="o">-</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">new_id</span> <span class="o">=</span> <span class="n">ids</span><span class="o">.</span><span class="n">pop</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span> <span class="o">=</span> <span class="n">Bucket</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item_id</span> <span class="o">=</span> <span class="n">bucket</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;some data&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item_id</span>
+<span class="go">&#39;id_0000&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+<span class="go">b&#39;some data&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;</span><span class="si">%r</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)))</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item_id</span> <span class="o">=</span> <span class="n">bucket</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">item_id</span>
+<span class="go">&#39;id_0001&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+<span class="go">b&#39;[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span> <span class="o">=</span> <span class="n">Bucket</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">new_id</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;some data&#39;</span><span class="p">)</span>
+<span class="go">&#39;id_0002&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">bucket</span><span class="o">.</span><span class="n">put</span><span class="p">(</span><span class="sa">b</span><span class="s1">&#39;some more data&#39;</span><span class="p">)</span>
+<span class="go">&#39;id_0003&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">sorted</span><span class="p">(</span><span class="n">bucket</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<span class="go">[&#39;id_0002&#39;, &#39;id_0003&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">item_id</span> <span class="ow">in</span> <span class="n">bucket</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+<span class="gp">... </span>    <span class="n">bucket</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">item_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="zoom.buckets.FileBucket.delete">
+<code class="descname">delete</code><span class="sig-paren">(</span><em>item_id</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.FileBucket.delete" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.buckets.FileBucket.exists">
+<code class="descname">exists</code><span class="sig-paren">(</span><em>item_id</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.FileBucket.exists" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.buckets.FileBucket.get">
+<code class="descname">get</code><span class="sig-paren">(</span><em>item_id</em>, <em>default=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.FileBucket.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.buckets.FileBucket.keys">
+<code class="descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.FileBucket.keys" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="zoom.buckets.FileBucket.put">
+<code class="descname">put</code><span class="sig-paren">(</span><em>item</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.FileBucket.put" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.buckets.mkdir_p">
+<code class="descclassname">zoom.buckets.</code><code class="descname">mkdir_p</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.mkdir_p" title="Permalink to this definition">¶</a></dt>
+<dd><p>make a directory path</p>
+<p>Makes a directory path.  If it already exists
+then return without doing anything.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="zoom.buckets.new_id">
+<code class="descclassname">zoom.buckets.</code><code class="descname">new_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.buckets.new_id" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a random unique id</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

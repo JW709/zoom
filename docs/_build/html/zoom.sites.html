@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>zoom.sites module &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Test</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zoom.database.html">zoom.database module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zoom.html.html">zoom.html module</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Set 1</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="zoom.tools.html">zoom.tools module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zoom.utils.html">zoom.utils module</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>zoom.sites module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/zoom.sites.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-zoom.sites">
+<span id="zoom-sites-module"></span><h1>zoom.sites module<a class="headerlink" href="#module-zoom.sites" title="Permalink to this headline">¶</a></h1>
+<p>zoom.sites</p>
+<p>Updated Zoom sites module.  Eventually, the functionality
+currently in zoom.site will make it’s way here.</p>
+<p>Note: experimental</p>
+<dl class="class">
+<dt id="zoom.sites.BackgroundJob">
+<em class="property">class </em><code class="descclassname">zoom.sites.</code><code class="descname">BackgroundJob</code><span class="sig-paren">(</span><em>name</em>, <em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.sites.BackgroundJob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Background Job</p>
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.sites.Site">
+<em class="property">class </em><code class="descclassname">zoom.sites.</code><code class="descname">Site</code><span class="sig-paren">(</span><em>path=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.sites.Site" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="zoom.site.html#zoom.site.Site" title="zoom.site.Site"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.site.Site</span></code></a></p>
+<p>a Zoom site</p>
+<p>A zoom site can be completely determined by the path to the
+site directory.  That directory may contain a config file,
+apps, and other assets.  If any assets are required that are
+not found in the site directory, the system will look in
+the default site as a fallback.  Any site setttings not found
+in the site config file will be obtained from the default
+site.  Any settings not found there will rely on built-in
+defaults.</p>
+<p>This Site object is not to be confused with the zoom.site.Site
+object, renamed here as BasicSite, which will eventually be
+phased out as that functionality is brought into this module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;localhost&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;users&#39;</span> <span class="ow">in</span> <span class="n">site</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">get_tables</span><span class="p">()</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<dl class="method">
+<dt id="zoom.sites.Site.get_background_jobs">
+<code class="descname">get_background_jobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.sites.Site.get_background_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a dict of background jobs</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">Site</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;localhost&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">get_background_jobs</span><span class="p">()</span>
+<span class="go">[BackgroundJob(&#39;hello&#39;)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="zoom.sites.SiteProxy">
+<em class="property">class </em><code class="descclassname">zoom.sites.</code><code class="descname">SiteProxy</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.sites.SiteProxy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Site proxy</p>
+<dl class="method">
+<dt id="zoom.sites.SiteProxy.run_background_jobs">
+<code class="descname">run_background_jobs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zoom.sites.SiteProxy.run_background_jobs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run background jobs</p>
+<p>Iterates through the apps in the site and calls
+run_background_jobs on each one.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">zoom</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site_directory</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">zoompath</span><span class="p">(</span><span class="s1">&#39;web/sites/localhost&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span> <span class="o">=</span> <span class="n">SiteProxy</span><span class="p">(</span><span class="n">site_directory</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">site</span><span class="o">.</span><span class="n">run_background_jobs</span><span class="p">()</span>
+<span class="go">localhost</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
