@@ -27,9 +27,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="zoom.validators module" href="zoom.validators.html" />
-    <link rel="prev" title="zoom.packages module" href="zoom.packages.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -79,20 +77,11 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../api_test.html">API Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_set1.html">API Set 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_set2.html">API Set 2</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../api_set3.html">API Set 3</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="zoom.packages.html">zoom.packages module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">zoom.fields module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.validators.html">zoom.validators module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.forms.html">zoom.forms module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.queues.html">zoom.queues module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.mail.html">zoom.mail module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.helpers.html">zoom.helpers module</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../api_set3.html">API Set 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_set4.html">API Set 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_topics.html">Advanced Topics</a></li>
 </ul>
@@ -140,8 +129,6 @@
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
         
-          <li><a href="../api_set3.html">API Set 3</a> &raquo;</li>
-        
       <li>zoom.fields module</li>
     
     
@@ -167,7 +154,7 @@
 <dl class="class">
 <dt id="zoom.fields.BasicImageField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">BasicImageField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.BasicImageField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Image Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">BasicImageField</span><span class="p">(</span><span class="s1">&#39;Photo&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
@@ -273,7 +260,7 @@ delete-image method.</p>
 <dl class="class">
 <dt id="zoom.fields.BirthdateField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">BirthdateField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.BirthdateField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.DateField" title="zoom.fields.DateField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DateField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.DateField" title="zoom.fields.DateField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DateField</span></code></a></p>
 <dl class="attribute">
 <dt id="zoom.fields.BirthdateField.css_class">
 <code class="descname">css_class</code><em class="property"> = 'birthdate_field'</em><a class="headerlink" href="#zoom.fields.BirthdateField.css_class" title="Permalink to this definition">¶</a></dt>
@@ -294,7 +281,7 @@ delete-image method.</p>
 <dl class="class">
 <dt id="zoom.fields.Button">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">Button</code><span class="sig-paren">(</span><em>caption='Save'</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.Button" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Button field.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Button</span><span class="p">(</span><span class="s1">&#39;Save&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">&#39;&#39;</span>
@@ -369,7 +356,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.ButtonField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">ButtonField</code><span class="sig-paren">(</span><em>caption='Save'</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.ButtonField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Button" title="zoom.fields.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Button</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Button" title="zoom.fields.Button"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Button</span></code></a></p>
 <p>Button field.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ButtonField</span><span class="p">(</span><span class="s1">&#39;Save&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">&#39;&#39;</span>
@@ -403,7 +390,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.Buttons">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">Buttons</code><span class="sig-paren">(</span><em>captions=['Save'], **keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.Buttons" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Buttons</span><span class="p">([</span><span class="s1">&#39;Save&#39;</span><span class="p">,</span><span class="s1">&#39;Publish&#39;</span><span class="p">,</span><span class="s1">&#39;Delete&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">&#39;&#39;</span>
 </pre></div>
@@ -483,7 +470,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.ButtonsField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">ButtonsField</code><span class="sig-paren">(</span><em>captions=['Save'], **keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.ButtonsField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Buttons" title="zoom.fields.Buttons"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Buttons</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Buttons" title="zoom.fields.Buttons"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Buttons</span></code></a></p>
 <p>Buttons field.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ButtonsField</span><span class="p">(</span><span class="s1">&#39;Save&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">&#39;&#39;</span>
@@ -508,7 +495,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.CheckboxField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">CheckboxField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.CheckboxField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Checkbox Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">CheckboxField</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;no&#39;</span>
@@ -725,7 +712,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.CheckboxesField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">CheckboxesField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.CheckboxesField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Checkboxes field.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">cb</span> <span class="o">=</span> <span class="n">CheckboxesField</span><span class="p">(</span><span class="s1">&#39;Select&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span><span class="s1">&#39;Three&#39;</span><span class="p">],</span> <span class="n">hint</span><span class="o">=</span><span class="s1">&#39;test hint&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">cb</span><span class="o">.</span><span class="n">widget</span><span class="p">())</span>
@@ -753,7 +740,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.ChosenMultiselectField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">ChosenMultiselectField</code><span class="sig-paren">(</span><em>*a</em>, <em>**k</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.ChosenMultiselectField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.MultiselectField" title="zoom.fields.MultiselectField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.MultiselectField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.MultiselectField" title="zoom.fields.MultiselectField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.MultiselectField</span></code></a></p>
 <p>Chosen Multiselect field.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">zoom.component</span> <span class="k">import</span> <span class="n">Component</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">ChosenMultiselectField</span><span class="p">(</span><span class="s1">&#39;Choose&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="s1">&#39;Two&#39;</span><span class="p">,</span><span class="s1">&#39;Three&#39;</span><span class="p">],</span> <span class="n">hint</span><span class="o">=</span><span class="s1">&#39;test hint&#39;</span><span class="p">)</span>
@@ -849,7 +836,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.ChosenSelectField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">ChosenSelectField</code><span class="sig-paren">(</span><em>*a</em>, <em>**k</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.ChosenSelectField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.PulldownField" title="zoom.fields.PulldownField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.PulldownField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.PulldownField" title="zoom.fields.PulldownField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.PulldownField</span></code></a></p>
 <dl class="attribute">
 <dt id="zoom.fields.ChosenSelectField.css_class">
 <code class="descname">css_class</code><em class="property"> = 'chosen'</em><a class="headerlink" href="#zoom.fields.ChosenSelectField.css_class" title="Permalink to this definition">¶</a></dt>
@@ -875,7 +862,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.DataURIAttachmentsField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">DataURIAttachmentsField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.DataURIAttachmentsField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>An Attachments field - DEPRECATED</p>
 <blockquote>
 <div><p>this field stores the data within the database
@@ -1062,7 +1049,7 @@ the auto processing of the queue (AJAX push) to bulk send the form all at once.<
 <dl class="class">
 <dt id="zoom.fields.DataURIImageField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">DataURIImageField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.DataURIImageField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.DataURIAttachmentsField" title="zoom.fields.DataURIAttachmentsField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DataURIAttachmentsField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.DataURIAttachmentsField" title="zoom.fields.DataURIAttachmentsField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DataURIAttachmentsField</span></code></a></p>
 <p>An Attachments field making use of a Data URI where we limit to a single file</p>
 <dl class="attribute">
 <dt id="zoom.fields.DataURIImageField.maximum_files">
@@ -1074,13 +1061,13 @@ the auto processing of the queue (AJAX push) to bulk send the form all at once.<
 <dl class="attribute">
 <dt id="zoom.fields.DataURIImagesField">
 <code class="descclassname">zoom.fields.</code><code class="descname">DataURIImagesField</code><a class="headerlink" href="#zoom.fields.DataURIImagesField" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#zoom.fields.DataURIAttachmentsField" title="zoom.fields.DataURIAttachmentsField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DataURIAttachmentsField</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="../api_set3.html#zoom.fields.DataURIAttachmentsField" title="zoom.fields.DataURIAttachmentsField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DataURIAttachmentsField</span></code></a></p>
 </dd></dl>
 
 <dl class="class">
 <dt id="zoom.fields.DateField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">DateField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.DateField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Date Field</p>
 <p>DatField values can be either actual dates (datetime.date) or string
 representations of dates.  Values coming from databases or from code
@@ -1280,7 +1267,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.DecimalField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">DecimalField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.DecimalField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.NumberField" title="zoom.fields.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.NumberField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.NumberField" title="zoom.fields.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.NumberField</span></code></a></p>
 <p>Decimal Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">DecimalField</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="s2">&quot;2.1&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;2.1&#39;</span>
@@ -1355,7 +1342,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.EditField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">EditField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.EditField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.MemoField" title="zoom.fields.MemoField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.MemoField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.MemoField" title="zoom.fields.MemoField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.MemoField</span></code></a></p>
 <p>Large textedit.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">EditField</span><span class="p">(</span><span class="s1">&#39;Notes&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
 <span class="go">&#39;&lt;textarea class=&quot;edit_field&quot; height=&quot;6&quot; id=&quot;notes&quot; name=&quot;notes&quot; size=&quot;10&quot;&gt;&lt;/textarea&gt;&#39;</span>
@@ -1398,7 +1385,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.EmailField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">EmailField</code><span class="sig-paren">(</span><em>label</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.EmailField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Email field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">EmailField</span><span class="p">(</span><span class="s1">&#39;Email&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
 <span class="go">&#39;&lt;input class=&quot;text_field&quot; id=&quot;email&quot; maxlength=&quot;60&quot; name=&quot;email&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;&#39;</span>
@@ -2007,7 +1994,7 @@ default value for the field.</p>
 <dl class="class">
 <dt id="zoom.fields.Fieldset">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">Fieldset</code><span class="sig-paren">(</span><em>label</em>, <em>fields</em>, <em>hint=''</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.Fieldset" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Fields" title="zoom.fields.Fields"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Fields</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Fields" title="zoom.fields.Fields"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Fields</span></code></a></p>
 <p>A collection of field objects with an associated label.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">Section</span><span class="p">(</span><span class="s1">&#39;Personal&#39;</span><span class="p">,[</span><span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;Joe&#39;</span><span class="p">)])</span><span class="o">.</span><span class="n">show</span><span class="p">())</span>
 <span class="go">&lt;h2&gt;Personal&lt;/h2&gt;</span>
@@ -2038,7 +2025,7 @@ default value for the field.</p>
 <dl class="class">
 <dt id="zoom.fields.FileField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">FileField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.FileField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">FileField</span><span class="p">(</span><span class="s1">&#39;Document&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
 <span class="go">&#39;&lt;input class=&quot;file_field&quot; id=&quot;document&quot; name=&quot;document&quot; type=&quot;file&quot; value=&quot;None&quot; /&gt;&#39;</span>
 </pre></div>
@@ -2075,7 +2062,7 @@ default value for the field.</p>
 <dl class="class">
 <dt id="zoom.fields.FloatField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">FloatField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.FloatField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.NumberField" title="zoom.fields.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.NumberField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.NumberField" title="zoom.fields.NumberField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.NumberField</span></code></a></p>
 <p>Float Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">FloatField</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mf">2.1</span><span class="p">)</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;2.1&#39;</span>
@@ -2151,7 +2138,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.Hidden">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">Hidden</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.Hidden" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Hidden field.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Hidden</span><span class="p">(</span><span class="s1">&#39;Hide Me&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">&#39;&#39;</span>
@@ -2177,13 +2164,13 @@ the value is the native data type for the field type.</p>
 <dl class="attribute">
 <dt id="zoom.fields.ImageField">
 <code class="descclassname">zoom.fields.</code><code class="descname">ImageField</code><a class="headerlink" href="#zoom.fields.ImageField" title="Permalink to this definition">¶</a></dt>
-<dd><p>alias of <a class="reference internal" href="#zoom.fields.BasicImageField" title="zoom.fields.BasicImageField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.BasicImageField</span></code></a></p>
+<dd><p>alias of <a class="reference internal" href="../api_set3.html#zoom.fields.BasicImageField" title="zoom.fields.BasicImageField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.BasicImageField</span></code></a></p>
 </dd></dl>
 
 <dl class="class">
 <dt id="zoom.fields.ImagesField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">ImagesField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.ImagesField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Display a drag and drop multiple image storage field</p>
 <p>this field is experimental - may change for a while yet</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ImagesField</span><span class="p">(</span><span class="s1">&#39;Photo&#39;</span><span class="p">)</span>
@@ -2192,7 +2179,7 @@ the value is the native data type for the field type.</p>
 </div>
 <dl class="attribute">
 <dt id="zoom.fields.ImagesField.default">
-<code class="descname">default</code><em class="property"> = 'b8cc5249d2c545a899b06c1b14ac3dbb'</em><a class="headerlink" href="#zoom.fields.ImagesField.default" title="Permalink to this definition">¶</a></dt>
+<code class="descname">default</code><em class="property"> = '82b30b1772d342dc84f3f674e716ba45'</em><a class="headerlink" href="#zoom.fields.ImagesField.default" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="method">
@@ -2253,7 +2240,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.IntegerField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">IntegerField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.IntegerField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Integer Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">IntegerField</span><span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;2&#39;</span>
@@ -2381,7 +2368,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.MarkdownEditField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">MarkdownEditField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.MarkdownEditField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.EditField" title="zoom.fields.EditField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.EditField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.EditField" title="zoom.fields.EditField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.EditField</span></code></a></p>
 <p>Large markdown edit field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">MarkdownEditField</span><span class="p">(</span><span class="s1">&#39;Notes&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
 <span class="go">&#39;&lt;textarea class=&quot;edit_field&quot; height=&quot;6&quot; id=&quot;notes&quot; name=&quot;notes&quot; size=&quot;10&quot;&gt;&lt;/textarea&gt;&#39;</span>
@@ -2418,7 +2405,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.MarkdownField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">MarkdownField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.MarkdownField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.MemoField" title="zoom.fields.MemoField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.MemoField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.MemoField" title="zoom.fields.MemoField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.MemoField</span></code></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">MarkdownField</span><span class="p">(</span><span class="s1">&#39;Notes&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;test **one** 23&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;&lt;p&gt;test &lt;strong&gt;one&lt;/strong&gt; 23&lt;/p&gt;&#39;</span>
@@ -2490,7 +2477,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.MemoField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">MemoField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.MemoField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Edit a paragraph of text.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">MemoField</span><span class="p">(</span><span class="s1">&#39;Notes&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">())</span>
 <span class="go">&lt;textarea class=&quot;memo_field&quot; cols=&quot;60&quot; id=&quot;notes&quot; name=&quot;notes&quot; rows=&quot;6&quot; size=&quot;10&quot;&gt;&lt;/textarea&gt;</span>
@@ -2549,7 +2536,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.MoneyField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">MoneyField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.MoneyField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.DecimalField" title="zoom.fields.DecimalField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DecimalField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.DecimalField" title="zoom.fields.DecimalField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.DecimalField</span></code></a></p>
 <p>Money Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="n">MoneyField</span><span class="p">(</span><span class="s2">&quot;Amount&quot;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
@@ -2655,7 +2642,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.MultiselectField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">MultiselectField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.MultiselectField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Multiselect Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">MultiselectField</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="s1">&#39;Two&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;One&#39;</span>
@@ -2940,7 +2927,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.NumberField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">NumberField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.NumberField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Number Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">NumberField</span><span class="p">(</span><span class="s1">&#39;Size&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;2&#39;</span>
@@ -3086,7 +3073,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.PasswordField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">PasswordField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.PasswordField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Password Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PasswordField</span><span class="p">(</span><span class="s1">&#39;Password&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="go">&#39;&#39;</span>
@@ -3117,7 +3104,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.PhoneField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">PhoneField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.PhoneField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Phone field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PhoneField</span><span class="p">(</span><span class="s1">&#39;Phone&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
 <span class="go">&#39;&lt;input class=&quot;text_field&quot; id=&quot;phone&quot; name=&quot;phone&quot; size=&quot;20&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;&#39;</span>
@@ -3138,7 +3125,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.PostalCodeField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">PostalCodeField</code><span class="sig-paren">(</span><em>label='Postal Code'</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.PostalCodeField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Postal code field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">PostalCodeField</span><span class="p">(</span><span class="s1">&#39;Postal Code&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
 <span class="go">&#39;&lt;input class=&quot;text_field&quot; id=&quot;postal_code&quot; maxlength=&quot;7&quot; name=&quot;postal_code&quot; size=&quot;7&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;&#39;</span>
@@ -3159,7 +3146,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.PulldownField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">PulldownField</code><span class="sig-paren">(</span><em>*a</em>, <em>**k</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.PulldownField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Pulldown Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">zoom.component</span> <span class="k">import</span> <span class="n">Component</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">PulldownField</span><span class="p">(</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="n">options</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="s1">&#39;Two&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
@@ -3355,7 +3342,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.RadioField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">RadioField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.RadioField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Radio Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">RadioField</span><span class="p">(</span><span class="s1">&#39;Choice&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span><span class="s1">&#39;Two&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;One&#39;</span>
@@ -3430,7 +3417,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.RangeSliderField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">RangeSliderField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.RangeSliderField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.IntegerField" title="zoom.fields.IntegerField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.IntegerField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.IntegerField" title="zoom.fields.IntegerField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.IntegerField</span></code></a></p>
 <p>jQuery UI Range Slider</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="n">RangeSliderField</span><span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span> <span class="nb">min</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">1500</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
@@ -3521,7 +3508,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.Section">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">Section</code><span class="sig-paren">(</span><em>label</em>, <em>fields</em>, <em>hint=''</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.Section" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Fields" title="zoom.fields.Fields"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Fields</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Fields" title="zoom.fields.Fields"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Fields</span></code></a></p>
 <p>A collection of field objects with an associated label.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">Section</span><span class="p">(</span><span class="s1">&#39;Personal&#39;</span><span class="p">,[</span><span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span><span class="n">value</span><span class="o">=</span><span class="s1">&#39;Joe&#39;</span><span class="p">)])</span><span class="o">.</span><span class="n">show</span><span class="p">())</span>
 <span class="go">&lt;h2&gt;Personal&lt;/h2&gt;</span>
@@ -3557,7 +3544,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.TextField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">TextField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.TextField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.Field" title="zoom.fields.Field"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.Field</span></code></a></p>
 <p>Text Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s2">&quot;John Doe&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">())</span>
 <span class="go">&lt;div class=&quot;field&quot;&gt;</span>
@@ -3629,7 +3616,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.TwitterField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">TwitterField</code><span class="sig-paren">(</span><em>label=''</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.TwitterField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>Twitter field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TwitterField</span><span class="p">(</span><span class="s1">&#39;Twitter&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">widget</span><span class="p">()</span>
 <span class="go">&#39;&lt;input class=&quot;text_field&quot; id=&quot;twitter&quot; name=&quot;twitter&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;&#39;</span>
@@ -3670,7 +3657,7 @@ the value is the native data type for the field type.</p>
 <dl class="class">
 <dt id="zoom.fields.URLField">
 <em class="property">class </em><code class="descclassname">zoom.fields.</code><code class="descname">URLField</code><span class="sig-paren">(</span><em>label</em>, <em>*validators</em>, <em>**keywords</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.fields.URLField" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.fields.TextField" title="zoom.fields.TextField"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.fields.TextField</span></code></a></p>
 <p>URL Field</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">URLField</span><span class="p">(</span><span class="s1">&#39;Website&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="s1">&#39;www.google.com&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">display_value</span><span class="p">()</span>
 <span class="go">&#39;&lt;a target=&quot;_window&quot; href=&quot;http://www.google.com&quot;&gt;http://www.google.com&lt;/a&gt;&#39;</span>
@@ -3835,15 +3822,6 @@ same pattern shows up.  Erring on the side of caution for now.</p>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="zoom.validators.html" class="btn btn-neutral float-right" title="zoom.validators module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="zoom.packages.html" class="btn btn-neutral" title="zoom.packages module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

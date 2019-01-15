@@ -6,12 +6,12 @@ Advanced Topics
    :caption: Advanced Topics
    :maxdepth: 2
 
-   api/zoom.component
-   api/zoom.components
-   api/zoom.instances
-   api/zoom.migrations
-   api/zoom.middleware
-   api/zoom.request
-   api/zoom.server
-   api/zoom.services
-   api/zoom.sites
+.. include:: api/zoom.component.rst
+.. include:: api/zoom.components.rst
+.. include:: api/zoom.instances.rst
+.. include:: api/zoom.migrations.rst
+.. include:: api/zoom.middleware.rst
+.. include:: api/zoom.request.rst
+.. include:: api/zoom.server.rst
+.. include:: api/zoom.services.rst
+.. include api/zoom.sites.rst

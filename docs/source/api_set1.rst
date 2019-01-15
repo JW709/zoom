@@ -6,5 +6,5 @@ API Set 1
    :caption: API Set 1
    :maxdepth: 2
 
-   api/zoom.tools
-   api/zoom.utils
+.. include:: api/zoom.tools.rst
+.. include:: api/zoom.utils.rst

@@ -27,9 +27,7 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="zoom.forms module" href="zoom.forms.html" />
-    <link rel="prev" title="zoom.fields module" href="zoom.fields.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -79,20 +77,11 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="../api_test.html">API Test</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_set1.html">API Set 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_set2.html">API Set 2</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="../api_set3.html">API Set 3</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="zoom.packages.html">zoom.packages module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.fields.html">zoom.fields module</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">zoom.validators module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.forms.html">zoom.forms module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.queues.html">zoom.queues module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.mail.html">zoom.mail module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="zoom.helpers.html">zoom.helpers module</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../api_set3.html">API Set 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../api_set4.html">API Set 4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_topics.html">Advanced Topics</a></li>
 </ul>
@@ -139,8 +128,6 @@
   <ul class="wy-breadcrumbs">
     
       <li><a href="../index.html">Docs</a> &raquo;</li>
-        
-          <li><a href="../api_set3.html">API Set 3</a> &raquo;</li>
         
       <li>zoom.validators module</li>
     
@@ -195,7 +182,7 @@
 <dl class="class">
 <dt id="zoom.validators.DateValidator">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">DateValidator</code><span class="sig-paren">(</span><em>date_format='%b %d</em>, <em>%Y'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.DateValidator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
 <p>Date validator</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">DateValidator</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;asdf&#39;</span><span class="p">)</span>
@@ -229,7 +216,7 @@
 <dl class="class">
 <dt id="zoom.validators.MaximumValue">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">MaximumValue</code><span class="sig-paren">(</span><em>max_value</em>, <em>empty_allowed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.MaximumValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
 <p>Maximum value validator</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MaximumValue</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -253,7 +240,7 @@
 <dl class="class">
 <dt id="zoom.validators.MinimumLength">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">MinimumLength</code><span class="sig-paren">(</span><em>min_length</em>, <em>empty_allowed=False</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.MinimumLength" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
 <p>A minimum length validator</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MinimumLength</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
@@ -288,7 +275,7 @@
 <dl class="class">
 <dt id="zoom.validators.MinimumValue">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">MinimumValue</code><span class="sig-paren">(</span><em>min_value</em>, <em>empty_allowed=True</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.MinimumValue" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
 <p>Minimum value validator</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">MinimumValue</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
@@ -302,7 +289,7 @@
 <dl class="class">
 <dt id="zoom.validators.PostalCodeValidator">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">PostalCodeValidator</code><a class="headerlink" href="#zoom.validators.PostalCodeValidator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.RegexValidator" title="zoom.validators.RegexValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.RegexValidator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.RegexValidator" title="zoom.validators.RegexValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.RegexValidator</span></code></a></p>
 <p>A Postal Code Validator</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">PostalCodeValidator</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;V8X 1G1&#39;</span><span class="p">)</span>
@@ -334,7 +321,7 @@
 <dl class="class">
 <dt id="zoom.validators.RegexValidator">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">RegexValidator</code><span class="sig-paren">(</span><em>msg</em>, <em>regex</em>, <em>options=0</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.RegexValidator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
 <p>A regular expression validator</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">RegexValidator</span><span class="p">(</span><span class="s1">&#39;invalid input&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;^[a-zA-Z0-9]+$&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
@@ -371,7 +358,7 @@
 <dl class="class">
 <dt id="zoom.validators.TimeValidator">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">TimeValidator</code><span class="sig-paren">(</span><em>time_format='%I:%M %p'</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.validators.TimeValidator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.Validator" title="zoom.validators.Validator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.Validator</span></code></a></p>
 <p>Time validator</p>
 <p>Validates a time in a variety of formats with time_format
 being the preferred format.</p>
@@ -445,7 +432,7 @@ being the preferred format.</p>
 <dl class="class">
 <dt id="zoom.validators.URLValidator">
 <em class="property">class </em><code class="descclassname">zoom.validators.</code><code class="descname">URLValidator</code><a class="headerlink" href="#zoom.validators.URLValidator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#zoom.validators.RegexValidator" title="zoom.validators.RegexValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.RegexValidator</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="../api_set3.html#zoom.validators.RegexValidator" title="zoom.validators.RegexValidator"><code class="xref py py-class docutils literal notranslate"><span class="pre">zoom.validators.RegexValidator</span></code></a></p>
 <p>A URL Validator</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span> <span class="o">=</span> <span class="n">URLValidator</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">validator</span><span class="o">.</span><span class="n">valid</span><span class="p">(</span><span class="s1">&#39;http://google.com&#39;</span><span class="p">)</span>
@@ -626,15 +613,6 @@ being the preferred format.</p>
            
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="zoom.forms.html" class="btn btn-neutral float-right" title="zoom.forms module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="zoom.fields.html" class="btn btn-neutral" title="zoom.fields module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

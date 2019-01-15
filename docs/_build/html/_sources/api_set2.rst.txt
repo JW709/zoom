@@ -7,6 +7,6 @@ API Set 2
    :caption: API Set 2
    :maxdepth: 2
 
-   api/zoom.store
-   api/zoom.records
-   api/zoom.buckets
+.. include:: api/zoom.store.rst
+.. include:: api/zoom.records.rst
+.. include:: api/zoom.buckets.rst

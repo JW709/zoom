@@ -6,10 +6,10 @@ API Set 3
    :caption: API Set 3
    :maxdepth: 2
 
-   api/zoom.packages
-   api/zoom.fields
-   api/zoom.validators
-   api/zoom.forms
-   api/zoom.queues
-   api/zoom.mail
-   api/zoom.helpers
+.. include:: api/zoom.packages.rst
+.. include:: api/zoom.fields.rst
+.. include:: api/zoom.validators.rst
+.. include:: api/zoom.forms.rst
+.. include:: api/zoom.queues.rst
+.. include:: api/zoom.mail.rst
+.. include:: api/zoom.helpers.rst

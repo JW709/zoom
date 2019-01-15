@@ -6,5 +6,5 @@ API Test
    :caption: API Test
    :maxdepth: 2
 
-   api/zoom.database
-   api/zoom.html
+.. include:: api/zoom.database.rst
+.. include:: api/zoom.html.rst

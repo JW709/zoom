@@ -6,11 +6,11 @@ API Set 4
    :caption: API Set 4
    :maxdepth: 2
 
-   api/zoom.mvc
-   api/zoom.page
-   api/zoom.audit
-   api/zoom.alerts
-   api/zoom.browse
-   api/zoom.apps
-   api/zoom.collect
-   api/zoom.response
+.. include:: api/zoom.mvc.rst
+.. include:: api/zoom.page.rst
+.. include:: api/zoom.audit.rst
+.. include:: api/zoom.alerts.rst
+.. include:: api/zoom.browse.rst
+.. include:: api/zoom.apps.rst
+.. include:: api/zoom.collect.rst
+.. include:: api/zoom.response.rst
