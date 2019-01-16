@@ -41,7 +41,7 @@ release = '0.1'
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
-    'm2r'
+    'm2r',
 ]
 
 napoleon_google_docstring = False

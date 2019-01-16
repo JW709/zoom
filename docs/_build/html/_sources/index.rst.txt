@@ -18,3 +18,4 @@ Zoom Documentation
    api_set4
    advanced_topics
    changelog_link
+   api/examples.rst

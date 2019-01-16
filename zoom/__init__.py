@@ -23,6 +23,8 @@ import zoom.settings
 import zoom.store
 import zoom.users
 
+import zoom.examples
+
 from .apps import App
 from .auditing import audit
 from .browse import browse
