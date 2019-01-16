@@ -297,13 +297,12 @@ to use the function.</p>
 <dl class="function">
 <dt id="zoom.examples.format_exception_google">
 <code class="descclassname">zoom.examples.</code><code class="descname">format_exception_google</code><span class="sig-paren">(</span><em>etype</em>, <em>value</em>, <em>tb</em>, <em>limit=None</em><span class="sig-paren">)</span><a class="headerlink" href="#zoom.examples.format_exception_google" title="Permalink to this definition">¶</a></dt>
-<dd><p>Format the exception with a traceback.
-Args:</p>
-<blockquote>
-<div>etype (str):  exception type
-value (int):  exception value
-tb (traceback): traceback object</div></blockquote>
+<dd><p>Format the exception with a traceback.</p>
 <dl class="docutils">
+<dt>Args:</dt>
+<dd>etype (str):  exception type.
+value (int):  exception value.
+tb (traceback): traceback object.</dd>
 <dt>Keyword Args:</dt>
 <dd>limit (int or None):  maximum number of stack frames to show [optional]</dd>
 <dt>Returns:</dt>
@@ -311,8 +310,10 @@ tb (traceback): traceback object</div></blockquote>
 <dt>Raises:</dt>
 <dd>AttributeError, KeyError</dd>
 </dl>
-<p>A really great idea.  A way you might use me is
-&gt;&gt;&gt; data = format_exception_google(‘wow’, 999, KeyError)</p>
+<p>A really great idea.  A way you might use me is</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">format_exception_google</span><span class="p">(</span><span class="s1">&#39;wow&#39;</span><span class="p">,</span> <span class="mi">999</span><span class="p">,</span> <span class="ne">KeyError</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="function">

@@ -3,17 +3,23 @@
 def format_exception_google(etype, value, tb, limit=None):
     """
     Format the exception with a traceback.
+
     Args:
-       etype (str):  exception type
-       value (int):  exception value
-       tb (traceback): traceback object
+       etype (str):  exception type.
+       value (int):  exception value.
+       tb (traceback): traceback object.
+
     Keyword Args:
        limit (int or None):  maximum number of stack frames to show [optional]
+    
     Returns:
        out:  list of strings
+    
     Raises:
        AttributeError, KeyError
+    
     A really great idea.  A way you might use me is
+    
     >>> data = format_exception_google('wow', 999, KeyError)
     """
     return etype, value, tb
