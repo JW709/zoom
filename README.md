@@ -1,4 +1,4 @@
-# Zoom
+# Zoom Overview
 
 [![Build Status](https://travis-ci.org/dsilabs/zoom.svg?branch=master)](https://travis-ci.org/dsilabs/zoom)
 [![Coverage Status](https://coveralls.io/repos/github/dsilabs/zoom/badge.svg?branch=master)](https://coveralls.io/github/dsilabs/zoom?branch=master)
@@ -26,7 +26,7 @@ View at: http://localhost
 
 ----
 
-## Table of Contents
+## Overview Topics
 * [Requirements](#requirements)
 * [Introduction](#introduction)
 * [Getting Started with Zoom](#getting-started-with-zoom)
@@ -113,30 +113,46 @@ There are several ways to do this, but the simplest is probably to add the zoom 
     $ export PYTHONPATH=/tmp/zoom
     ```
 
-3. add zoom command to your path
+4. add zoom command to your path
 Ubuntu example:
     ```shell
     $ ln -s /tmp/zoom/utils/zoom/bin/zoom /usr/local/bin/zoom
     ```
 
-4. configure zoom database
-Currently, Zoom requires a MySQL comptabile database to run.  If you don't already have MySQL or MariaDB installed follow the instructions for your operating system.  Once
+5. configure zoom database
+Currently, Zoom requires a MySQL comptabile database to run.  If you don't already have MySQL or MariaDB installed follow the instructions for your operating system.  Alternatively set up a Mariadb/MySQL instance inside a docker container. In either case make sure you set the port to -p 3306:3306. 
+    ```shell 
+    $ docker run --dbname zoom-mariadb -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD -p 3306:3306 -d mariadb:latest
+    ```
+Once
 that is installed create the database using the command:
     ```shell
-    $ zoom database create <db_name> -u <username> -p <password> -e mysql
+    $ zoom database -e mysql -u root -p $MYSQL_ROOT_PASSWORD create <dbname>
     ```
    Next, edit the site.ini file for the localhost site using your editor like so:
     ```shell
     $ vi web/sites/localhost/site.ini
-    ```
-   Find the database section of the config file and set the values for the
-database configuration to correspond to your database configuration.
+    ``` 
 
-5. Run zoom
-If you are currently in the zoom directory then you don't need to tell
-zoom where to find your zoom instance.
+   Find the database section of the config file and set the values for the
+database configuration to correspond to your database configuration. Typically:
     ```shell
-    $ zoom server
+    [monitoring]
+    profiling=1
+    logging=1
+    app_database=1
+
+    [database]
+    user=<username>
+    password=<password>
+
+    ```
+
+6. Run zoom
+If you are currently in the zoom directory then you don't need to tell
+zoom where to find your zoom instance or you can specify the directory and port.
+    ```shell
+    $ zoom server -p 8080 ~/work/web
     ```
 
 ### Creating the Blog App

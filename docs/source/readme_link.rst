@@ -1,5 +1,4 @@
-README
-======
+
 
 
 .. mdinclude:: ../../README.md
