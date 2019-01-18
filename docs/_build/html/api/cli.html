@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Changelog" href="../changelog.html" />
-    <link rel="prev" title="Zoom Documentation" href="../readme.html" /> 
+    <link rel="prev" title="README" href="../readme.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -78,11 +78,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Further reading:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../readme.html">Zoom Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../readme.html">README</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Zoom CLI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#zoom-database">zoom database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zoom-server">zoom server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zoom-new">zoom new</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
@@ -152,41 +155,16 @@
             
   <div class="section" id="zoom-cli">
 <h1>Zoom CLI<a class="headerlink" href="#zoom-cli" title="Permalink to this headline">¶</a></h1>
-<ul>
-<li><p class="first">zoom database [ &lt; options &gt; ]</p>
-<blockquote>
-<div><ul class="simple">
-<li>manage the database</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">zoom new [] [name]</p>
-<blockquote>
-<div><ul class="simple">
-<li>create an app</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">zoom server [] [instance]</p>
-<blockquote>
-<div><ul class="simple">
-<li>run an instance using Python’s builtin HTTP server</li>
-</ul>
-</div></blockquote>
-</li>
-<li><p class="first">zoom setup [] [name]</p>
-<blockquote>
-<div><ul class="simple">
-<li>set up a new Zoom instance</li>
-</ul>
-</div></blockquote>
-</li>
-</ul>
 <div class="section" id="zoom-database">
 <h2>zoom database<a class="headerlink" href="#zoom-database" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
-<div class="line">usage: zoom database {database name} [options]  …</div>
+<div class="line">usage: manage the database</div>
 <div class="line">required: database name and command</div>
+</div>
+<div class="line-block">
+<div class="line">eg: <code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">database</span> <span class="pre">-e</span> <span class="pre">mysql</span> <span class="pre">-u</span> <span class="pre">root</span> <span class="pre">-p</span> <span class="pre">$MYSQL_ROOT_PASSWORD</span> <span class="pre">create</span> <span class="pre">zoomdata</span></code></div>
+</div>
+<div class="line-block">
 <div class="line">commands:</div>
 </div>
 <ul class="simple">
@@ -270,6 +248,53 @@
 </li>
 </ul>
 </div>
+<div class="section" id="zoom-server">
+<h2>zoom server<a class="headerlink" href="#zoom-server" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">usage: run a built-in zoom http server</div>
+<div class="line">required: specify port and root directory</div>
+</div>
+<ul>
+<li><p class="first">zoom server - [options]</p>
+</li>
+<li><p class="first">eg: <code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">server</span> <span class="pre">-p</span> <span class="pre">8000</span> <span class="pre">~/work/web</span></code></p>
+</li>
+<li><p class="first">-n, - -noop</p>
+<blockquote>
+<div><ul class="simple">
+<li>use special debugging middleware stack</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">-u USER, - -user USER</p>
+<blockquote>
+<div><ul class="simple">
+<li>run site as specified user</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">-v, - -verbose</p>
+<blockquote>
+<div><ul class="simple">
+<li>verbose console logging</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">-f FILTER, - -filter FILTER</p>
+</li>
+</ul>
+</div>
+<div class="section" id="zoom-new">
+<h2>zoom new<a class="headerlink" href="#zoom-new" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">usage: create a new app</div>
+<div class="line">required: command and app name</div>
+<div class="line">eg: <code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">new</span> <span class="pre">my_app</span></code></div>
+</div>
+<ul class="simple">
+<li>zoom new [project_name]</li>
+</ul>
+</div>
 </div>
 
 
@@ -283,7 +308,7 @@
         <a href="../changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../readme.html" class="btn btn-neutral" title="Zoom Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../readme.html" class="btn btn-neutral" title="README" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

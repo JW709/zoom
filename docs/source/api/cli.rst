@@ -1,34 +1,15 @@
 Zoom CLI
 ========
 
-- zoom database [ < options > ]
-
-    - manage the database
-
-
-- zoom new [] [name]
-
-    - create an app
-
-
-- zoom server [] [instance]
-
-    - run an instance using Python's builtin HTTP server
-
-
-- zoom setup [] [name]
-
-     - set up a new Zoom instance
-
-
-
 
 zoom database
 -------------
-| usage: zoom database {database name} [options]  ...
+| usage: manage the database
 | required: database name and command
-| commands:
 
+| eg: ``zoom database -e mysql -u root -p $MYSQL_ROOT_PASSWORD create zoomdata``
+
+| commands:
 - create
 - list
 - show
@@ -80,3 +61,34 @@ zoom database
 -   -f, - -force
 
         - force database creation (drop existing)
+
+zoom server
+-----------
+| usage: run a built-in zoom http server
+| required: specify port and root directory
+
+- zoom server - [options]
+- eg: ``zoom server -p 8000 ~/work/web``
+
+-  -n, - -noop            
+
+        - use special debugging middleware stack
+
+-  -u USER, - -user USER  
+        
+        - run site as specified user
+
+-  -v, - -verbose         
+
+        - verbose console logging
+
+-  -f FILTER, - -filter FILTER
+
+
+zoom new
+--------
+| usage: create a new app
+| required: command and app name
+| eg: ``zoom new my_app``
+
+- zoom new [project_name]

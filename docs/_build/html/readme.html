@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Zoom Documentation &mdash; Zoom Documentation 0.1 documentation</title>
+  <title>README &mdash; Zoom Documentation 0.1 documentation</title>
   
 
   
@@ -29,7 +29,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Zoom CLI" href="api/cli.html" />
-    <link rel="prev" title="Zoom Documentation" href="index.html" /> 
+    <link rel="prev" title="Introduction" href="introduction.html" /> 
 
   
   <script src="_static/js/modernizr.min.js"></script>
@@ -78,23 +78,18 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <p class="caption"><span class="caption-text">Further reading:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Zoom Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview-topics">Overview Topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">README</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#readme-topics">Readme Topics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">Introduction</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#what-is-it">What is it?</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#why-zoom-exists">Why Zoom exists</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#when-would-you-use-it">When would you use it?</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">Getting started with Zoom</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id4">Installing Zoom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Getting started with Zoom</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Installing Zoom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#creating-the-blog-app">Creating the Blog App</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Contributing</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-the-easy-way">Setting Up The Easy way</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#setting-up-the-hard-way">Setting Up The Hard Way</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#testing">Testing</a></li>
@@ -149,7 +144,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Zoom Documentation</li>
+      <li>README</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,8 +163,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="zoom-documentation">
-<h1>Zoom Documentation<a class="headerlink" href="#zoom-documentation" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="readme">
+<h1>README<a class="headerlink" href="#readme" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://travis-ci.org/dsilabs/zoom"><img alt="Build Status" src="https://travis-ci.org/dsilabs/zoom.svg?branch=master" /></a>
 <a class="reference external image-reference" href="https://coveralls.io/github/dsilabs/zoom?branch=master"><img alt="Coverage Status" src="https://coveralls.io/repos/github/dsilabs/zoom/badge.svg?branch=master" /></a>
 <a class="reference external image-reference" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
@@ -188,8 +183,8 @@ web sites quickly and easily.</p>
 </div>
 <p>View at: <a class="reference external" href="http://localhost">http://localhost</a></p>
 <hr class="docutils" />
-<div class="section" id="overview-topics">
-<h2>Overview Topics<a class="headerlink" href="#overview-topics" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="readme-topics">
+<h2>Readme Topics<a class="headerlink" href="#readme-topics" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><a class="reference external" href="#requirements">Requirements</a></li>
 <li><a class="reference external" href="#introduction">Introduction</a></li>
@@ -205,50 +200,13 @@ web sites quickly and easily.</p>
 <p>Zoom requires Python 3 and MySQL to run, along with a host of other 3rd party library requirements which are listed in the requirements.txt file.  It is currently tested and used on Various flavours of GNU/Linux, Mac and Windows.</p>
 </div>
 <div class="section" id="id2">
-<h2>Introduction<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>This guide provides a 60,000 foot view of Zoom, it’s purpose and philosopy.</p>
-<p>After reading this guide, you will know:</p>
-<ul class="simple">
-<li>what Zoom is</li>
-<li>why Zoom exists</li>
-<li>what sorts of projects you might want to use Zoom for</li>
-</ul>
-<div class="section" id="what-is-it">
-<h3>What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h3>
-<p>Zoom is a web application platform that aims to provide enough out-of-the-box functionality to get your idea up and running quickly with all of the bits that it is likely to need without locking you into the framework itself.</p>
-</div>
-<div class="section" id="why-zoom-exists">
-<h3>Why Zoom exists<a class="headerlink" href="#why-zoom-exists" title="Permalink to this headline">¶</a></h3>
-<p>While many web application frameworks have been developed for Python, these frameworks primarily fall into two camps:</p>
-<ol class="arabic simple">
-<li>minimalistic micro-frameworks for building quick and dirty web applications leaving most of the work to the developer, and;</li>
-<li>full-stack frameworks which take care of a lot of the details commonly required by web applications but requiring substantial up-front infrastructure decisions and configuration.</li>
-</ol>
-<p>The great part about the minimalistic approach is that you’re not committed to a huge stack of code that you don’t need.  The challenge is that it leaves a lot out.  You end up  having to re-write the same basic supporting models and supporting administrative apps and over and over again.  How many times do you really want to write your /login, /logout and and I /forgot my password apps?</p>
-<p>The great thing about the full-stack frameworks is that they come with all the bells and whistles that you need to support your core app.  The challenge though is that to do this they often require the use of very specific components, you are really expected to do things their way and you have to make a lot of configuration decisions up front that require thoughtful decision.  While taking a lot of the decision making out of the hands of the developer can be a good thing, sometimes developers end up working around these frameworks as much as they work with them.</p>
-<p>Zoom is written for application developers in a hurry.  Optimized to minimize developer time, it is designed to make it easy to get something developed, running and deployed very quickly.</p>
-<p>It attempts to do this by adhering to the following key prinicples:</p>
-<ul class="simple">
-<li>Relentless Modularity</li>
-<li>Dynamic over Static</li>
-<li>Reasonable defaults for everything</li>
-</ul>
-<p>Because of the modularity it encourages parts of your app can often be re-used in other projects so that the more you use it, the more productive you get.</p>
-<p>As user requirements change and your app inevitably evolves, the dynamic and modular approach encourages you to make changes quickly and easily.</p>
-</div>
-<div class="section" id="when-would-you-use-it">
-<h3>When would you use it?<a class="headerlink" href="#when-would-you-use-it" title="Permalink to this headline">¶</a></h3>
-<p>Zoom is ideally suited to web developers that just want to get something up and running quickly without committing a lot of code to things they may want to change later. This is it’s sweet spot. Because of this it is great for prototyping and rapid iterations of applications under active development.</p>
-</div>
-</div>
-<div class="section" id="id3">
-<h2>Getting started with Zoom<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>Getting started with Zoom<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>The best way to get started with Zoom is to try it.  By following along with
 this guide step by step you’ll create a Zoom app called blog, a simple weblog.
 Before you can start building the app, you need to make sure that you have Zoom
 installed.</p>
-<div class="section" id="id4">
-<h3>Installing Zoom<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3>Installing Zoom<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>Open up a terminal window and follow along with the following steps.  The
 dollar sign $ in the following examples is the command prompt.</p>
 <p>Zoom is a Python 3 framework so you’ll need to have Python 3 installed to run it.  We
@@ -406,8 +364,8 @@ zoom where to find your zoom instance or you can specify the directory and port.
 <p>That’s as far as we’ll go with the app right now.  In the future we’ll provide more of the features people have come to expect from a blog app.</p>
 </div>
 </div>
-<div class="section" id="id5">
-<h2>Contributing<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>Contributing<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <p>To contribute your own code to Zoom you’ll need to setup a development
 environment.</p>
 <div class="section" id="setting-up-the-easy-way">
@@ -449,7 +407,7 @@ can skip them by specifying only the other directories for tests.</p>
         <a href="api/cli.html" class="btn btn-neutral float-right" title="Zoom CLI" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="index.html" class="btn btn-neutral" title="Zoom Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="introduction.html" class="btn btn-neutral" title="Introduction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
