@@ -1,6 +1,10 @@
 Zoom CLI
 ========
 
+Use the Zoom command line utility to set up a new Zoom instance, set up a Zoom http server, manage the database, and create a new Zoom app.
+
+To see a list of available options for each command run ``zoom <command> -h``
+
 
 zoom database
 -------------
@@ -84,6 +88,12 @@ zoom server
 
 -  -f FILTER, - -filter FILTER
 
+
+zoom setup
+----------
+| usage: set up a new zoom instance
+| required: directory
+| eg: ``zoom setup [options] directory``
 
 zoom new
 --------

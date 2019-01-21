@@ -56,4 +56,5 @@ Zoom is ideally suited to web developers that just want to get something up and 
    introduction 
    readme
    api/cli.rst
+   todo_sampleapp
    changelog

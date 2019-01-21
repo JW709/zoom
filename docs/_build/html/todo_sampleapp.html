@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Application Development &mdash; Zoom Documentation 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="Zoom CLI" href="api/cli.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Zoom Documentation
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Further reading:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="readme.html">README</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/cli.html">Zoom CLI</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application Development</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#part-1-creation-and-basic-structure">Part 1: Creation and Basic structure</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-stage">Setting the stage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-application">Creating a new application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#general-application-structure">General application structure</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Zoom Documentation</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Application Development</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/todo_sampleapp.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="application-development">
+<h1>Application Development<a class="headerlink" href="#application-development" title="Permalink to this headline">¶</a></h1>
+<p>This tutorial will walk you through creating a new application and cover aspects from basic application structure, controllers and storage, to generating fake data and model properties. At the end you will have a functioning ToDo application.</p>
+<ul class="simple">
+<li>Part 1: Creation and Basic structure</li>
+<li>Part 2: Controllers and storage</li>
+<li>Part 3: Fake Data, Model Properties, and Deleting</li>
+</ul>
+</div>
+<div class="section" id="part-1-creation-and-basic-structure">
+<h1>Part 1: Creation and Basic structure<a class="headerlink" href="#part-1-creation-and-basic-structure" title="Permalink to this headline">¶</a></h1>
+<p>Covered in this section:</p>
+<ul class="simple">
+<li>Setting the stage</li>
+<li>General application structure</li>
+<li>Define content for the Team page</li>
+<li>Define content for the Overview page</li>
+</ul>
+<div class="section" id="setting-the-stage">
+<h2>Setting the stage<a class="headerlink" href="#setting-the-stage" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Actions covered in this step:</dt>
+<dd><ul class="first last simple">
+<li>Workstation update</li>
+<li>Use <code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">new</span></code> to create a new app using the default template</li>
+<li>Start local zoom server</li>
+</ul>
+</dd>
+<dt>End results:</dt>
+<dd><ul class="first last simple">
+<li><dl class="first docutils">
+<dt>New <code class="docutils literal notranslate"><span class="pre">todo</span></code> applicaiton created with:</dt>
+<dd><ul class="first last">
+<li>app.py</li>
+<li>index.py</li>
+<li>config.ini</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Key concepts with further reading (if available):</dt>
+<dd><ul class="first last simple">
+<li>update_local_workstation</li>
+<li>zoom new</li>
+<li>run_local_server</li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="creating-a-new-application">
+<h2>Creating a new application<a class="headerlink" href="#creating-a-new-application" title="Permalink to this headline">¶</a></h2>
+<p>Zoom comes with a built in command to create all the files necessary to create a new application complete with a default template.</p>
+<ol class="arabic simple">
+<li><dl class="first docutils">
+<dt><code class="docutils literal notranslate"><span class="pre">cd</span></code> to the directory where you want to create your app</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~work</span></code></dd>
+</dl>
+</li>
+<li><code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">new</span> <span class="pre">todo</span></code></li>
+</ol>
+<p>Inspecting the contents of that directory you will see (at a minimum) the files:</p>
+<blockquote>
+<div><ul>
+<li><dl class="first docutils">
+<dt>app.py</dt>
+<dd><p class="first">Every Zoom application is required to provide a module called app.py stored in the main folder for the application, which, when called, returns content for the browser.</p>
+<p class="last">Through this single python program, your program will be able to provide everything from simple pages to complex visualizations and dashboards. Zoom provides many convenient tools to accomplish this with very little programming.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>config.ini</dt>
+<dd><p class="first last">The config.ini file contains application settings which might include things like the application title.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>index.py</dt>
+<dd><p class="first last">The index.py file contains the index or default views for the application (we will discuss more about views later in the document).</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<ol class="arabic" start="3">
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">app.py</span></code>, this is where you will see your main application menu. We want to add two new menu items, a team page and a task page.</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">app.menu</span> <span class="pre">=</span> <span class="pre">'Overview',</span> <span class="pre">'About',</span> <span class="pre">'Tasks',</span> <span class="pre">'Team'</span></code></p>
+</div></blockquote>
+</li>
+</ol>
+<p>If you click on our new menu items you will get a 404, this is expected as we haven’t built any content yet! We are now done working with this module.</p>
+<ol class="arabic simple" start="4">
+<li>Open <code class="docutils literal notranslate"><span class="pre">index.py</span></code> to start adding functionality. To serve something from the task page create a member in the index view. Zoom will look in index.py for the <code class="docutils literal notranslate"><span class="pre">main</span></code> dispatcher, in this case we’re calling the view.</li>
+</ol>
+</div>
+<div class="section" id="general-application-structure">
+<h2>General application structure<a class="headerlink" href="#general-application-structure" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Actions covered in this</dt>
+<dd><ul class="first last simple">
+<li>Add items to the application menu - editing app.py</li>
+<li>Define views/pages for the new menu items - editing index.py step:</li>
+</ul>
+</dd>
+<dt>Results at the end of this step:</dt>
+<dd><ul class="first last simple">
+<li>Team menu items displayed</li>
+<li>Static, simple content displayed for each of the new menu items</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="api/cli.html" class="btn btn-neutral" title="Zoom CLI" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Dynamic Solutions Inc
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
