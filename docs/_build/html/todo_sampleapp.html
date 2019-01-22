@@ -83,11 +83,10 @@
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="readme.html">README</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/cli.html">Zoom CLI</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Application Development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#part-1-creation-and-basic-structure">Part 1: Creation and Basic structure</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#setting-the-stage">Setting the stage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creating-a-new-application">Creating a new application</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#general-application-structure">General application structure</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Application Development</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#part-1-creation-and-basic-structure">Part 1: Creation and Basic structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#part-2-mvc">Part 2: MVC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#part-3-fake-data-model-properties-and-deleting">Part 3: Fake Data, Model Properties, and Deleting</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
@@ -163,51 +162,8 @@
 <li>Part 2: Controllers and storage</li>
 <li>Part 3: Fake Data, Model Properties, and Deleting</li>
 </ul>
-</div>
 <div class="section" id="part-1-creation-and-basic-structure">
-<h1>Part 1: Creation and Basic structure<a class="headerlink" href="#part-1-creation-and-basic-structure" title="Permalink to this headline">¶</a></h1>
-<p>Covered in this section:</p>
-<ul class="simple">
-<li>Setting the stage</li>
-<li>General application structure</li>
-<li>Define content for the Team page</li>
-<li>Define content for the Overview page</li>
-</ul>
-<div class="section" id="setting-the-stage">
-<h2>Setting the stage<a class="headerlink" href="#setting-the-stage" title="Permalink to this headline">¶</a></h2>
-<dl class="docutils">
-<dt>Actions covered in this step:</dt>
-<dd><ul class="first last simple">
-<li>Workstation update</li>
-<li>Use <code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">new</span></code> to create a new app using the default template</li>
-<li>Start local zoom server</li>
-</ul>
-</dd>
-<dt>End results:</dt>
-<dd><ul class="first last simple">
-<li><dl class="first docutils">
-<dt>New <code class="docutils literal notranslate"><span class="pre">todo</span></code> applicaiton created with:</dt>
-<dd><ul class="first last">
-<li>app.py</li>
-<li>index.py</li>
-<li>config.ini</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</dd>
-<dt>Key concepts with further reading (if available):</dt>
-<dd><ul class="first last simple">
-<li>update_local_workstation</li>
-<li>zoom new</li>
-<li>run_local_server</li>
-</ul>
-</dd>
-</dl>
-</div>
-<div class="section" id="creating-a-new-application">
-<h2>Creating a new application<a class="headerlink" href="#creating-a-new-application" title="Permalink to this headline">¶</a></h2>
+<h2>Part 1: Creation and Basic structure<a class="headerlink" href="#part-1-creation-and-basic-structure" title="Permalink to this headline">¶</a></h2>
 <p>Zoom comes with a built in command to create all the files necessary to create a new application complete with a default template.</p>
 <ol class="arabic simple">
 <li><dl class="first docutils">
@@ -215,7 +171,11 @@
 <dd><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~work</span></code></dd>
 </dl>
 </li>
-<li><code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">new</span> <span class="pre">todo</span></code></li>
+<li><dl class="first docutils">
+<dt>Run the <a href="#id1"><span class="problematic" id="id2">``</span></a>zoom new my_app’’ utility that will generate all the files necessary to get your app up and running.</dt>
+<dd><code class="docutils literal notranslate"><span class="pre">zoom</span> <span class="pre">new</span></code></dd>
+</dl>
+</li>
 </ol>
 <p>Inspecting the contents of that directory you will see (at a minimum) the files:</p>
 <blockquote>
@@ -235,40 +195,303 @@
 </li>
 <li><dl class="first docutils">
 <dt>index.py</dt>
-<dd><p class="first last">The index.py file contains the index or default views for the application (we will discuss more about views later in the document).</p>
+<dd><p class="first last">The index.py file contains the index or default views for the application.</p>
 </dd>
 </dl>
 </li>
 </ul>
 </div></blockquote>
 <ol class="arabic" start="3">
-<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">app.py</span></code>, this is where you will see your main application menu. We want to add two new menu items, a team page and a task page.</p>
+<li><p class="first">Open <code class="docutils literal notranslate"><span class="pre">app.py</span></code>, this is where you will see your main application menu. We want to add a new menu item, a Task page.</p>
 <blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">app.menu</span> <span class="pre">=</span> <span class="pre">'Overview',</span> <span class="pre">'About',</span> <span class="pre">'Tasks',</span> <span class="pre">'Team'</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">app.menu</span> <span class="pre">=</span> <span class="pre">'Overview',</span> <span class="pre">'About',</span> <span class="pre">'Tasks'</span></code></p>
 </div></blockquote>
 </li>
 </ol>
-<p>If you click on our new menu items you will get a 404, this is expected as we haven’t built any content yet! We are now done working with this module.</p>
-<ol class="arabic simple" start="4">
-<li>Open <code class="docutils literal notranslate"><span class="pre">index.py</span></code> to start adding functionality. To serve something from the task page create a member in the index view. Zoom will look in index.py for the <code class="docutils literal notranslate"><span class="pre">main</span></code> dispatcher, in this case we’re calling the view.</li>
-</ol>
+<p>If you click on our new menu item you will get a 404, this is expected as we haven’t built any content yet! We are now done working with the <code class="docutils literal notranslate"><span class="pre">app.py</span></code> module.</p>
 </div>
-<div class="section" id="general-application-structure">
-<h2>General application structure<a class="headerlink" href="#general-application-structure" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="part-2-mvc">
+<h2>Part 2: MVC<a class="headerlink" href="#part-2-mvc" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple" start="4">
+<li>Open <code class="docutils literal notranslate"><span class="pre">index.py</span></code> to get an idea of the application functionality. Zoom works by first searching index.py for the <code class="docutils literal notranslate"><span class="pre">main</span></code> dispatcher, the dispatcher will call anything in the list being passed to it, in this case we’re calling the view. The dispatcher is responsible for creating the view and calling it.</li>
+</ol>
 <dl class="docutils">
-<dt>Actions covered in this</dt>
+<dt>Zoom gives several ways to implement views, you can either:</dt>
 <dd><ul class="first last simple">
-<li>Add items to the application menu - editing app.py</li>
-<li>Define views/pages for the new menu items - editing index.py step:</li>
-</ul>
-</dd>
-<dt>Results at the end of this step:</dt>
-<dd><ul class="first last simple">
-<li>Team menu items displayed</li>
-<li>Static, simple content displayed for each of the new menu items</li>
+<li>Use a method on main view of application (index.py). This works fine for things that are not very complicated (i.e. require only a few lines of code), like the about page.</li>
+<li>Zoom will look for a module of the same name before it looks for a view, which provides greater flexibility and is great for something more complicated like our tasks page.</li>
 </ul>
 </dd>
 </dl>
+<p>Lets go ahead and make a <code class="docutils literal notranslate"><span class="pre">tasks.py</span></code> module and give it the basics of what zoom will look for: a view, an index method, and add a main dispatch statement. We can give our page a title and then we will likely want to display some content, a list of tasks on this page. The logic of how tasks are stored and retrived will go in <code class="docutils literal notranslate"><span class="pre">model.py</span></code> and <code class="docutils literal notranslate"><span class="pre">tasks.py</span></code> will control the presentation of the model. Let’s go ahead and import zoom as well as the model. We can then add some content to our page, a browsable list of our tasks. We will also want to indlude a ‘New Task’ Button which we can do by using an action in our index method. Clicking our new button will result in a 404 because we haven’t created the method for it yet. The <code class="docutils literal notranslate"><span class="pre">new</span></code> method will take care of this.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    todo tasks</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">zoom</span>
+<span class="kn">import</span> <span class="nn">model</span>
+
+<span class="k">class</span> <span class="nc">TaskController</span><span class="p">(</span><span class="n">zoom</span><span class="o">.</span><span class="n">Controller</span><span class="p">):</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    We will use a controller here instead of a view because we will</span>
+<span class="sd">    eventually want to maniputlate the underlying model instead of a read only view. A controller gives us access to the ability for zoom to interpret for us.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+    <span class="n">form</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_task_form</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    We will create the form outside of a method and make it act like a class so we can access the form in multiple places.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+    <span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">actions</span> <span class="o">=</span> <span class="s1">&#39;New&#39;</span><span class="p">,</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">browse</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">get_tasks</span><span class="p">())</span>
+        <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Tasks&quot;</span><span class="p">,</span> <span class="n">actions</span><span class="o">=</span><span class="n">actions</span><span class="p">)</span>
+
+
+    <span class="k">def</span> <span class="nf">new</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        New will display an empty form that you can fill in task info and save. Use the model for the form logic. The next thing we need to do is edit the &#39;new&#39; method to return the form, so we need to pass in the form data and initialize the form with the data. If form validation fails, the invalid data that is coming back will be passed to the new routine plus the valid data and we will get an error that tells us what required field is missing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;New Task&#39;</span><span class="p">)</span>
+
+<span class="n">main</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">dispatch</span><span class="p">(</span><span class="n">TaskController</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic" start="5">
+<li><p class="first">Next create a <code class="docutils literal notranslate"><span class="pre">model.py</span></code> module where we will write the logic for our application like how tasks are stored and retreived. In <code class="docutils literal notranslate"><span class="pre">model.py</span></code> import zoom. Zoom comes equipped with a variety of methods that we can use in our application.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">py</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">model</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">zoom</span>
+<span class="kn">import</span> <span class="nn">zoom.fields</span> <span class="k">as</span> <span class="nn">f</span>
+<span class="kn">import</span> <span class="nn">zoom.validators</span> <span class="k">as</span> <span class="nn">v</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">tools we will use later</span>
+
+<span class="sd">import faker</span>
+<span class="sd">import random</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="nf">get_tasks</span><span class="p">():</span>
+    <span class="k">return</span><span class="p">[]</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Now we will use the model to create a form. Zoom provides a number of convenient tools for creating forms. A form object will give you the form itself and it can be cusomized using a variety of fields. We can go ahead and import these tools now. Then lets create a basic form with a title, description, and lets assign a category, and priority as well. Zoom has built-in date and time tools. We can set a defauly due date as one week from today as the due date for the task. We can also use the built in validator tool on any field indicating they are required. For now we’ll make the title the only requirement.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="kn">import</span> <span class="nn">zoom.fields</span> <span class="k">as</span> <span class="nn">f</span>
+<span class="kn">import</span> <span class="nn">zoom.validators</span> <span class="k">as</span> <span class="nn">v</span>
+
+<span class="k">def</span> <span class="nf">get_task_form</span><span class="p">():</span>
+ <span class="sd">&quot;&quot;&quot;Return Task Form&quot;&quot;&quot;</span>
+ <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">Form</span><span class="p">(</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">TextField</span><span class="p">(</span><span class="s1">&#39;Title&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">required</span><span class="p">,</span> <span class="n">hint</span><span class="o">=</span><span class="s1">&#39;required&#39;</span><span class="p">),</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">MemoField</span><span class="p">(</span><span class="s1">&#39;Description&#39;</span><span class="p">),</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">ChosenMultiselectField</span><span class="p">(</span><span class="s1">&#39;Categories&#39;</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">get_category_options</span><span class="p">()),</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">DateField</span><span class="p">(</span><span class="s1">&#39;Due Date&#39;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span>   <span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">one_week</span><span class="p">),</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">RadioField</span><span class="p">(</span><span class="s1">&#39;Priority&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">PRIORITY_OPTIONS</span><span class="p">),</span>
+     <span class="n">f</span><span class="o">.</span><span class="n">ButtonField</span><span class="p">(</span><span class="s1">&#39;Create&#39;</span><span class="p">),</span>
+ <span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Once our form is created we can go ahead and fill in our definitions. For category options and priority options we can define the variables we used in our <code class="docutils literal notranslate"><span class="pre">get_task_form()</span></code> method.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="n">PRIORITY_OPTIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span> <span class="s1">&#39;Medium&#39;</span><span class="p">,</span> <span class="s1">&#39;High&#39;</span><span class="p">]</span>
+<span class="n">CATEGORY_OPTIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;One&#39;</span><span class="p">,</span> <span class="s1">&#39;Two&#39;</span><span class="p">,</span> <span class="s1">&#39;Three&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">get_category_options</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Return a category&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">CATEGORY_OPTIONS</span>
+</pre></div>
+</div>
+<ol class="arabic" start="7">
+<li><p class="first">Now we’ll get into the business of creating tasks. In Step 6 we added a <code class="docutils literal notranslate"><span class="pre">Create</span></code> button now we can add a task store to the TaskView Controller and create a method to be called when the button is clicked. But remember! We want to make sure the form data is valid. So we will add that logic here and then pass the evaluated data into the model. If the model returns true we will have an alert message and then return back to the ‘Tasks’ page. If the form fails it will return a 404 error</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">create_button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">):</span>
+    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">create_task</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">evaluate</span><span class="p">())</span>
+            <span class="n">zoom</span><span class="o">.</span><span class="n">alerts</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="s1">&#39;Tasks created!&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">home</span><span class="p">(</span><span class="s1">&#39;tasks)</span>
+
+<span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Head back to <code class="docutils literal notranslate"><span class="pre">model.py</span></code> and we’ll add the logic to <code class="docutils literal notranslate"><span class="pre">create_task()</span></code>. Several things will happen here. We will edit our <code class="docutils literal notranslate"><span class="pre">get_task()</span></code> method and then create a table schema to store our tasks. Our store will be a subtype of the class ‘model’ and we will store our data in a table called whatever you name your class, in this case we’ll use ‘Task’. Now we can edit our  <code class="docutils literal notranslate"><span class="pre">get_task()</span></code> method to return the Task store we just created.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">create_task</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">tasks</span> <span class="o">=</span> <span class="n">get_tasks</span><span class="p">()</span>
+    <span class="n">tasks</span><span class="o">.</span><span class="n">put</span><span class="p">()</span>
+    <span class="k">return</span> <span class="kc">True</span>
+
+
+
+<span class="k">def</span> <span class="nf">get_tasks</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">store_of</span><span class="p">()</span>
+
+
+<span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="n">zoom</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+    <span class="k">pass</span>
+
+
+<span class="k">def</span> <span class="nf">get_tasks</span><span class="p">()</span>
+<span class="sd">&quot;&quot;&quot;Return tasks&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">store_of</span><span class="p">(</span><span class="n">Task</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic" start="8">
+<li><p class="first">We’ll probably want the ability to delete tasks so we can go ahead and create a ‘Delete’ button on our TaskController. Once we delete our tasks we can return back to the task page</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+ <span class="k">def</span> <span class="nf">zap</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">zap_tasks</span><span class="p">()</span>
+    <span class="n">zoom</span><span class="o">.</span><span class="n">alerts</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s1">&#39;task deleted&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="s1">&#39;tasks&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>In order to run the zap method we can add it to our list of actions by editing the new method  in our index. In Part 3. we will add the functionality to create a task at random so we can add ‘I Feel Lucky’ to our list of actions too. Lets also take this opportunity to clean up our labels. Start by specifying the columns you would like in your Task table, and then specify the labels. We can then add this to our content.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;formatted_categories&#39;</span><span class="p">,</span> <span class="s1">&#39;due_date&#39;</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Description&#39;</span><span class="p">,</span> <span class="s1">&#39;Categories&#39;</span><span class="p">,</span> <span class="s1">&#39;Due Date&#39;</span><span class="p">,</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="s1">&#39;New&#39;</span><span class="p">,</span> <span class="s1">&#39;Zap&#39;</span><span class="p">,</span> <span class="s1">&#39;I Feel Lucky&#39;</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">browse</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">get_tasks</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Tasks&quot;</span><span class="p">,</span> <span class="n">actions</span><span class="o">=</span><span class="n">actions</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Of course now we need to add the <code class="docutils literal notranslate"><span class="pre">zap_task()</span></code> logic to our model. Now that our app has basic functionality we can move on to generate tasks randomly.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+
+<span class="k">def</span> <span class="nf">zap_tasks</span><span class="p">():</span>
+<span class="o">***</span><span class="n">Zap</span> <span class="n">the</span> <span class="n">tasks</span> <span class="n">store</span><span class="o">***</span>
+<span class="n">get_tasks</span><span class="p">()</span><span class="o">.</span><span class="n">zap</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="part-3-fake-data-model-properties-and-deleting">
+<h2>Part 3: Fake Data, Model Properties, and Deleting<a class="headerlink" href="#part-3-fake-data-model-properties-and-deleting" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic" start="9">
+<li><p class="first">Lets add some functionality to create reasonable tasks at random. In <code class="docutils literal notranslate"><span class="pre">model.py</span></code> we can create a method to create a fake record <code class="docutils literal notranslate"><span class="pre">add_random_task</span></code> and create a dict to represent data. We will use the python module Faker, it’s already a zoom requirment so all you need to do is import it and create an object called ‘fake’. The faker package has a lot of default providers built in. We will use words, description, etc. For categories we can take a random sample of our category options using ‘randint’ from the zoom ‘random’ module. We can also use <code class="docutils literal notranslate"><span class="pre">randint</span></code> to pick a due date within a specified time frame. Priority will be a random choice of our <code class="docutils literal notranslate"><span class="pre">PRIORITY_OPTIONS</span></code> variable we declared previously.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+
+<span class="kn">import</span> <span class="nn">faker</span>
+<span class="kn">import</span> <span class="nn">random</span>
+
+<span class="n">fake</span> <span class="o">=</span> <span class="n">fake</span><span class="o">.</span><span class="n">Faker</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">add_random_task</span><span class="p">():</span>
+<span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">fake</span><span class="o">.</span><span class="n">words</span><span class="p">()),</span>
+    <span class="n">description</span><span class="o">=</span><span class="n">fake</span><span class="o">.</span><span class="n">paragraph</span><span class="p">(),</span>
+    <span class="n">categories</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">get_category_options</span><span class="p">(),</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span>
+    <span class="n">due_date</span><span class="o">=</span><span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">today</span><span class="p">()</span> <span class="o">+</span> <span class="n">zoom</span><span class="o">.</span><span class="n">tools</span><span class="o">.</span><span class="n">one_day</span> <span class="o">*</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">),</span>
+    <span class="n">priority</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">PRIORITY_OPTIONS</span><span class="p">),</span>
+    <span class="n">assigned_to</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">get_team_member_options</span><span class="p">())[</span><span class="mi">1</span><span class="p">],</span>
+<span class="p">)</span>
+<span class="n">form</span> <span class="o">=</span> <span class="n">get_task_form</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">create_task</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">evaluate</span><span class="p">())</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fail&#39;</span><span class="p">)</span>
+    <span class="n">zoom</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">app</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">evaluate</span><span class="p">())</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>In our TaskController we will add the random task button and if the task succeeds we will return home.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">i_feel_lucky</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">model</span><span class="o">.</span><span class="n">add_random_task</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">home</span><span class="p">(</span><span class="s1">&#39;tasks&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="10">
+<li>Now lets add an action to delete a single task from our list. First, we can create a column for the action in our index.</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">index</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">columns</span> <span class="o">=</span> <span class="s1">&#39;actions&#39;</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">,</span> <span class="s1">&#39;description&#39;</span><span class="p">,</span> <span class="s1">&#39;formatted_categories&#39;</span><span class="p">,</span> <span class="s1">&#39;due_date&#39;</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="s1">&#39;Actions&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;Description&#39;</span><span class="p">,</span> <span class="s1">&#39;Categories&#39;</span><span class="p">,</span> <span class="s1">&#39;Due Date&#39;</span><span class="p">,</span>
+    <span class="n">actions</span> <span class="o">=</span> <span class="s1">&#39;New&#39;</span><span class="p">,</span> <span class="s1">&#39;Zap&#39;</span><span class="p">,</span> <span class="s1">&#39;I Feel Lucky&#39;</span>
+    <span class="n">content</span> <span class="o">=</span> <span class="n">zoom</span><span class="o">.</span><span class="n">browse</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">get_tasks</span><span class="p">(),</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">content</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Tasks&quot;</span><span class="p">,</span> <span class="n">actions</span><span class="o">=</span><span class="n">actions</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Then we can add an ‘actions’ property to our Task store and return a small form <code class="docutils literal notranslate"><span class="pre">get_done_form()</span></code> which will include a hidden field of the item key the person is clicking, and a button. In our actions property we can return the <code class="docutils literal notranslate"><span class="pre">get_done_form()</span></code> and initialie the key value for that particular record, then return the form in edit mode which will display the button.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+
+
+<span class="k">def</span> <span class="nf">get_done_form</span><span class="p">():</span>
+    <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">Form</span><span class="p">(</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">Hidden</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">required</span><span class="p">,</span> <span class="n">v</span><span class="o">.</span><span class="n">valid_number</span><span class="p">),</span>
+        <span class="n">f</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="s1">&#39;Done&#39;</span><span class="p">)</span>
+    <span class="p">)</span>
+
+<span class="k">class</span> <span class="nc">Task</span><span class="p">(</span><span class="n">zoom</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+
+<span class="nd">@property</span>
+<span class="k">def</span> <span class="nf">actions</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">get_done_form</span><span class="p">()</span>
+    <span class="n">form</span><span class="o">.</span><span class="n">initialize</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_id</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">form</span><span class="o">.</span><span class="n">edit</span><span class="p">()</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="11">
+<li>Now we need to create a handler to delete the task once the button is clicled. In our TaskController our <code class="docutils literal notranslate"><span class="pre">done_button()</span></code> will get some data (our key) and we will get our form, and if the form validates we will get the model to complete the task for us. Just for fun lets add some affirmations once a task is completed. First create a variable AFFIRMATIONS and set it equal to a list of affirmations, then all we need to do is set an alert with a random choice of our affirmations, don’t forget to import the random module! Finally we’ll return back to our list of tasks.</li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+
+<span class="kn">import</span> <span class="nn">random</span>
+
+
+<span class="n">AFFIRMATIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Great job!&#39;</span><span class="p">,</span> <span class="s1">&#39;Killin it!&#39;</span><span class="p">,</span> <span class="s1">&#39;You can do it!&#39;</span><span class="p">,</span> <span class="s1">&#39;Way to go!&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">done_button</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">data</span><span class="p">):</span>
+    <span class="n">form</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">get_done_form</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">form</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">model</span><span class="o">.</span><span class="n">complete_task</span><span class="p">(</span><span class="n">form</span><span class="o">.</span><span class="n">evaluate</span><span class="p">()):</span>
+            <span class="n">zoom</span><span class="o">.</span><span class="n">alerts</span><span class="o">.</span><span class="n">success</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">AFFIRMATIONS</span><span class="p">))</span>
+            <span class="k">return</span> <span class="n">zoom</span><span class="o">.</span><span class="n">home</span><span class="p">(</span><span class="s1">&#39;tasks&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now we need to get the model to figure out how to complete the task. The data being passed in will have the key in it, so we want to grab that key, first make sure it is a valid key, then try and find a task that is associated with that key. If we get a task then we ar going to delete that task and return True. If none of this works we will return False and we won’t get a success message.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
+
+<span class="k">def</span> <span class="nf">complete_task</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Complete a task&quot;&quot;&quot;</span>
+    <span class="n">key</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">key</span><span class="p">:</span>
+        <span class="n">tasks</span> <span class="o">=</span> <span class="n">get_tasks</span><span class="p">()</span>
+        <span class="n">task</span> <span class="o">=</span> <span class="n">tasks</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">task</span><span class="p">:</span>
+            <span class="n">tasks</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="n">task</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+</pre></div>
+</div>
 </div>
 </div>
 
